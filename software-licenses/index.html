@@ -1,0 +1,381 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Common Software Licenses</title>
+
+		<link rel="stylesheet" href="../css/reset.css">
+		<link rel="stylesheet" href="../css/reveal.css">
+		<link rel="stylesheet" href="../css/theme/solarized.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../lib/css/github.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../css/print/pdf.css' : '../css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		<style>
+			.reveal blockquote {
+				background-color: rgba(255,255,255, 0.5);
+				font-size: 80%;
+			}
+			.reveal blockquote > *:last-child:not(:first-child) {
+				font-style: normal;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>Software Licenses</h1>
+					<p>and The Business Models that Love Them</p>
+				</section>
+				<section>
+				<section>
+					<section data-markdown data-separator="^\r?\n---\r?\n$">
+						<textarea data-template>
+							by Jesse Clark  
+							University of Technology Sydney
+
+							Copyright © 2019
+							<!-- .element: class="fragment fade-up" -->
+
+							<p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="cc-by-4.0-88x31.png" /></a><br />This work is licensed under a <br><a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
+							<!-- .element: class="fragment fade-up" -->
+
+							[`reveal.js`](https://revealjs.com/) is licensed under the [MIT License](https://github.com/hakimel/reveal.js/blob/master/LICENSE)
+							<!-- .element: class="fragment fade-up" -->
+
+							[`highlight.js`](https://highlightjs.org/) is licensed under the [BSD 3-Clause License](https://github.com/highlightjs/highlight.js)
+							<!-- .element: class="fragment fade-up" -->
+
+							[`marked.js`](https://marked.js.org/) is licensed under the [MIT License](https://github.com/markedjs/marked/blob/master/LICENSE.md)
+							<!-- .element: class="fragment fade-up" -->
+
+							[Markdown](https://daringfireball.net/projects/markdown/) is licensed under [a BSD-style license](https://daringfireball.net/projects/markdown/license.text)
+							<!-- .element: class="fragment fade-up" -->
+						</textarea>
+					</section>
+				</section>
+				</section>
+				<section>
+					<h2>Risks</h2>
+					<section data-markdown data-separator="^\r?\n---\r?\n$">
+						<textarea data-template>
+							What are the risks of being in the software business?
+
+							---
+
+							> “Many of the classic problems of developing software products derive from this essential complexity and its nonlinear increases with size. From the complexity comes the difficulty of communication among team members, which leads to **product flaws, cost overruns, schedule delays**. From the complexity comes the difficulty of enumerating, much less understanding, all the possible states of the program, and from that comes the **unreliability**. From complexity of function comes the difficulty of invoking function, which makes programs hard to use. From complexity of structure comes the **difficulty of extending programs** to new functions without creating side effects. From complexity of structure come the unvisualized states that constitute **security trapdoors**.”
+							> 
+							> — [No Silver Bullet](http://www.cs.nott.ac.uk/~pszcah/G51ISS/Documents/NoSilverBullet.html), by Fred Brooks (1986)
+
+							---
+
+
+							Software could kill someone
+
+							- [Therac-25](https://en.wikipedia.org/wiki/Therac-25) (1985–1987)
+							- [Sudden unintended acceleration](https://en.wikipedia.org/wiki/Sudden_unintended_acceleration) (1987–)
+							- [List of self-driving car fatalities](https://en.wikipedia.org/wiki/List_of_self-driving_car_fatalities) (2016–)
+							- [Boeing 737 MAX](https://www.wired.com/story/boeing-737-max-8-ethiopia-crash-faa-software-fix-lion-air/) (2018)
+
+							---
+
+							Software could destroy equipment, or money, or customers’ data
+
+							- [The Explosion of the Ariane 5](http://www-users.math.umn.edu/~arnold/disasters/ariane.html) (1996)
+							- [Knight Capital Says Trading Glitch Cost It $440 Million](https://dealbook.nytimes.com/2012/08/02/knight-capital-says-trading-mishap-cost-it-440-million/) (2012)
+							- [EVE Online Update Bug](https://www.eveonline.com/article/about-the-boot.ini-issue) (2007)  
+							  ```bash
+							  Delete "$INSTDIR\boot.ini"
+							  ```
+							- [Steam Update Bug](https://drj11.wordpress.com/2015/01/20/steaming/) (2015)  
+							  ```bash
+							  rm -rf "$STEAMROOT/"*
+							  ```
+							- [A Software Update Bricked Nike's $350 Self-Tying Shoes](https://www.popularmechanics.com/technology/apps/a26474770/nike-adapt-bb-shoe/) (2019)
+
+							---
+
+							Software could allow an intruder to access our systems
+
+							- [Morris Worm](http://groups.csail.mit.edu/mac/classes/6.805/articles/morris-worm.html) (1988)
+							- [Medtronic cardiac implant](https://en.wikipedia.org/wiki/Medtronic#Technology_safety) (2008–2011)
+							- [Heartbleed](http://heartbleed.com/) (2014)
+							- [“`goto fail`” SSL Bug](https://nakedsecurity.sophos.com/2014/02/24/anatomy-of-a-goto-fail-apples-ssl-bug-explained-plus-an-unofficial-patch/) (2014)
+							- [Node.js `event-stream` hack](https://www.eweek.com/security/node.js-event-stream-hack-exposes-supply-chain-security-risks) (2018)
+							- [Zoom video conferencing](https://www.schneier.com/blog/archives/2019/07/zoom_vulnerabil.html) (2019)
+
+							---
+
+							Software could do something forbiddden by law
+
+							- [4-line RSA algorithm restricted by munitions export law](https://en.wikipedia.org/wiki/Export_of_cryptography_from_the_United_States) (1975–1997)
+							  - [Bernstein v. United States](https://cr.yp.to/export.html) (1996)
+							- [`09 F9 11 02 9D 74 E3 5B D8 41 56 C5 63 56 88 C0`](https://knowyourmeme.com/memes/09-f9-11-02-9d-74-e3-5b-d8-41-56-c5-63-56-88-c0) (2007)
+							- [Volkswagen emissions scandal](https://en.wikipedia.org/wiki/Volkswagen_emissions_scandal) (2008–2015)
+							- [List of GDPR Fines](https://alpin.io/blog/gdpr-fines-list/) (2018–)
+							- Patent infringement
+
+							---
+
+							Software could give incorrect analysis of strategic data
+
+							- [Nimbus-7 and Stratospheric Ozone](https://earthobservatory.nasa.gov/features/RemoteSensingAtmosphere/remote_sensing5.php) (1978–1985)
+
+							> “On two occasions I have been asked, — ‘Pray, Mr. Babbage, if you put into the machine wrong figures, will the right answers come out?’ In one case a member of the Upper, and in the other a member of the Lower, House put this question. I am not able rightly to apprehend the kind of confusion of ideas that could provoke such a question.”
+							> 
+							> — [Passages from the Life of a Philosopher](https://en.wikisource.org/wiki/Passages_from_the_Life_of_a_Philosopher/Chapter_V), by Charles Babbage (1864)
+
+							---
+
+							Software production could run over budget without producing usable results
+
+							- [List of failed and overbudget custom software projects](https://en.wikipedia.org/wiki/List_of_failed_and_overbudget_custom_software_projects) (1982–)
+
+							> “No amount of automation will have any significant <br>effect on the size or efficiency of a bureaucracy.”
+							> 
+							> — [Why it is Important that Software Projects Fail](http://www.berglas.org/Articles/ImportantThatSoftwareFails/ImportantThatSoftwareFails.html), by Anthony Berglas (2008)
+
+							---
+
+							Unpleasant software could cause poor customer retention
+
+							- examples from the audience, please
+						</textarea>
+					</section>
+				</section>
+				<section>
+					<h2>Liabilities</h2>
+					<section data-markdown data-separator="^\r?\n---\r?\n$">
+						<textarea data-template>
+							If we **publish** software that later causes damages, are we liable for those damages?
+
+							If we **use** third-party software that causes damages, are we liable for those damages?
+
+							---
+
+							Did the software include a warranty?
+
+							Does the law specify an [implied warranty](https://en.wikipedia.org/wiki/Implied_warranty) of  
+							merchantability or fitness for a particular purpose?
+							<!-- .element: class="fragment" -->
+
+							---
+
+							Does the implied warranty depend on the price?
+
+							> Australian businesses must guarantee products and services they sell, hire or lease for:
+							>
+							> - under $40,000
+							> - over $40,000 that are normally bought for personal or household use.
+							>
+							> — [Australian Competition and Consumer Act](https://www.accc.gov.au/consumers/consumer-rights-guarantees/consumer-guarantees) (2010)
+
+							---
+
+							To use software, we have to copy it to our machines.
+
+							Do we have the rights to make that copy?
+
+							How can we prove that?
+
+
+						</textarea>
+					</section>
+				</section>
+				<section>
+					<h2>Software Licenses</h2>
+					<section data-markdown data-separator="^\r?\n---\r?\n$">
+						<textarea data-template>
+
+							---
+
+							The main risk we face when we choose to use some software is that we may not have the right to use it.
+
+							> The author of a written or recorded work automatically receives the rights to control copying that work.
+							>
+							> (In the case of a “work-for-hire” prepared by an employee within the scope of their employment, the employer is considered the author.)
+							>
+							> — [Berne Convention](https://en.wikipedia.org/wiki/Berne_Convention) (1886),  
+							> [World Intellectual Property Organization Copyright Treaty](https://en.wikipedia.org/wiki/WIPO_Copyright_Treaty) (1996)
+
+							---
+
+							Even if we have the rights to copy some software, we may not have the rights to run it, because it implements a patented algorithm.
+
+							Algorithms that are allowed for use in a university research lab may not be allowed for use in a commercial business.
+
+							- [GIF](https://patents.google.com/patent/US4558302): US Patent 4558302B1 (1994-2011)
+
+							- [Scale-Invariant Feature Transform](https://patents.google.com/patent/US6711293): US Patent 6711293B1 (2004–2020)
+
+							---
+
+							Infringing on intellectual property could get us sued,  
+							and cancel all the value we are trying to create.
+
+							Therefore, a self-interested business should always  
+							make sure they have the rights to use software.
+
+							These rights are provided in the form of a software license.
+
+						</textarea>
+					</section>
+				</section>
+				<section>
+					<h2>Types of Software Licenses</h2>
+					<section data-markdown data-separator="^\r?\n---\r?\n$">
+						<textarea data-template>
+							> “Each item of work being done on the project is to manage a particular risk.”
+							> 
+							> — [Risk-First Software Development](https://riskfirst.org/Quick-Summary), by Rob Moffat (2019)
+
+---
+
+| Risk                                                                                                                                 | none perceived |
+|------|--|
+| Strategy                                                                                                                             | just publish |
+| License | Public Domain, WTFPL, CC0                                                                                                    |
+| Business Model | sell separate warranties, charge for enhancements                                                                    |
+| Example | Spacewar\!, qmail, SQLite                                                                                                   |
+
+---
+
+| Risk | If our hardware has no drivers, customers will not be able to use it.                                                         |
+|------|--|
+| Strategy | Include closed-source drivers with hardware                                                                               |
+| License | Closed source, warranty void upon tampering                                                                                 |
+| Business Model | Hardware vendor                                                                                                        |
+| Example | nvidia                                                                                                                        |
+
+---
+
+| Risk | If customers do not directly pay for the software, we will not make any money.                                                |
+|------|--|
+| Strategy | Pay per seat, with license keys or other DRM                                                                               |
+| License | Closed source, pay per seat, 35-page End User License Agreement                                                            |
+| Business Model | Consumer software vendor                                                                                               |
+| Example | Mathematica, Adobe, typical PC video games                                                                                  |
+
+---
+
+| Risk | If customers understand how much our software costs, they will buy less of it.                                                |
+|------|--|
+| Strategy | Free download, no license keys                                                                                             |
+| License | Closed source, 500-page license agreement                                                                                  |
+| Business Model | Enterprise software vendor, with software license auditing (racketeering)                                          |
+| Example | Oracle                                                                                                                        |
+
+---
+
+| Risk | The software could become impossible to maintain. The software industry could remain in the proprietary mode forever.          |
+|------|--|
+| Strategy | Create the first free option.                                                                                               |
+| License | General Public License ("Copyleft")                                                                                     |
+| Business Model | Consulting. Enable large systems which create programming jobs.                                                      |
+| Example | Linux kernel, bash, Python, nmap, Git, MySQL, VLC, Audacity                                                                       |
+
+---
+
+| Risk | We could be liable for damages caused by the software.                                                                          |
+|------|--|
+| Strategy | Include an "as-is" disclaimer.                                                                                         |
+| License | MIT License                                                                                                                   |
+| Business Model | Contracting. Build systems whose components can be maintained by the community. "Commoditize your complements." |
+| Example | X11, GitLab, PuTTy, curl, Ruby on Rails, Node.js, Lua, Rust, Julia, Nim, Netlify CMS, NewsBlur                             |
+
+---
+
+| Risk | We could be defamed by association with some user of the software.                                                              |
+|------|--|
+| Strategy | Include a non-endorsement disclaimer.                                                                                      |
+| License | BSD 3-clause License                                                                                                         |
+| Business Model | Build large interoperable systems. Rough consensus and working code.                                           |
+| Example | BSD, CMake, CMU Sphinx, Dart, Go, Nginx                                                                                     |
+
+---
+
+| Risk | The software could produce incorrect results when used to make decisions about a nuclear facility.                              |
+|------|--|
+| Strategy | Include a no-nuke clause.                                                                                                  |
+| License | BSD no-nuke variant                                                                                                          |
+| Business Model |                                                                                                                        |
+| Example |                                                                                                                               |
+
+---
+
+| Risk | Potential users and maintainers could ignore the software for fear of infringing our patents.                                   |
+|------|--|
+| Strategy | Include a patent grant.                                                                                                     |
+| License | Apache License                                                                                                                |
+| Business Model | Enable large systems, which can still be sold commercially.                                                         |
+| Example | Hadoop, Lucene, TensorFlow                                                                                                  |
+| Counterexample | React |
+
+						</textarea>
+					</section>
+				</section>
+				<section>
+					<section data-markdown data-separator="^\r?\n---\r?\n$">
+						<textarea data-template>
+
+							> “The continued adaptation, modification, and correction of errors in [programs] is essentially dependent on a certain kind of knowledge possessed by a group of programmers who are closely and continuously connected with them.”
+							> 
+							> — [Programming as Theory Building](http://pages.cs.wisc.edu/~remzi/Naur.pdf), by Peter Naur (1985)
+
+<!--
+							---
+
+							> “The three chief virtues of a programmer are:  
+							> Laziness, Impatience, and Hubris.”
+							> 
+							> — [Programming Perl](http://wiki.c2.com/?LazinessImpatienceHubris), by Larry Wall (1991)
+-->
+						</textarea>
+					</section>
+				</section>
+			</div>
+		</div>
+
+		<script src="../js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				width: 1440,
+				height: 900,
+				margin: 0.1,
+				controls: false,
+				progress: false,
+				slideNumber: "c/t",
+				showNotes: false,
+				hash: true,
+				history: true,
+				fragments: true,
+				fragmentInURL: true,
+				pdfSeparateFragments: false,
+				markdown: {
+					smartypants: true
+				},
+				dependencies: [
+					{ src: '../plugin/markdown/marked.js' },
+					{ src: '../plugin/markdown/markdown.js' },
+					{ src: '../plugin/notes/notes.js', async: true },
+					{ src: '../plugin/highlight/highlight.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
