@@ -242,85 +242,85 @@
 
 ---
 
-| Risk                                                                                                                                 | none perceived |
+| Risk | none perceived |
 |------|--|
-| Strategy                                                                                                                             | just publish |
-| License | Public Domain, WTFPL, CC0                                                                                                    |
-| Business Model | sell separate warranties, charge for enhancements                                                                    |
-| Example | Spacewar\!, qmail, SQLite                                                                                                   |
+| **Strategy** | just publish |
+| **License** | Public Domain, WTFPL, CC0 |
+| **Business Model** | sell separate warranties, charge for enhancements |
+| **Example** | Spacewar\!, qmail, SQLite |
 
 ---
 
-| Risk | If our hardware has no drivers, customers will not be able to use it.                                                         |
+| Risk | If our hardware has no drivers, customers will not be able to use it. |
 |------|--|
-| Strategy | Include closed-source drivers with hardware                                                                               |
-| License | Closed source, warranty void upon tampering                                                                                 |
-| Business Model | Hardware vendor                                                                                                        |
-| Example | nvidia                                                                                                                        |
+| **Strategy** | Include closed-source drivers with hardware |
+| **License** | Closed source, warranty void upon tampering |
+| **Business Model** | Hardware vendor |
+| **Example** | nvidia |
 
 ---
 
-| Risk | If customers do not directly pay for the software, we will not make any money.                                                |
+| Risk | If customers do not directly pay for the software, we will not make any money. |
 |------|--|
-| Strategy | Pay per seat, with license keys or other DRM                                                                               |
-| License | Closed source, pay per seat, 35-page End User License Agreement                                                            |
-| Business Model | Consumer software vendor                                                                                               |
-| Example | Mathematica, Adobe, typical PC video games                                                                                  |
+| **Strategy** | Pay per seat, with license keys or other DRM |
+| **License** | Closed source, pay per seat, 35-page End User License Agreement |
+| **Business Model** | Consumer software vendor |
+| **Example** | Mathematica, Adobe, typical PC video games |
 
 ---
 
-| Risk | If customers understand how much our software costs, they will buy less of it.                                                |
+| Risk | If customers understand how much our software costs, they will buy less of it. |
 |------|--|
-| Strategy | Free download, no license keys                                                                                             |
-| License | Closed source, 500-page license agreement                                                                                  |
-| Business Model | Enterprise software vendor, with software license auditing (racketeering)                                          |
-| Example | Oracle                                                                                                                        |
+| **Strategy** | Free download, no license keys |
+| **License** | Closed source, 500-page license agreement |
+| **Business Model** | Enterprise software vendor, with software license auditing (racketeering) |
+| **Example** | Oracle |
 
 ---
 
-| Risk | The software could become impossible to maintain. The software industry could remain in the proprietary mode forever.          |
+| Risk | The software could become impossible to maintain. The software industry could remain in the proprietary mode forever. |
 |------|--|
-| Strategy | Create the first free option.                                                                                               |
-| License | General Public License ("Copyleft")                                                                                     |
-| Business Model | Consulting. Enable large systems which create programming jobs.                                                      |
-| Example | Linux kernel, bash, Python, nmap, Git, MySQL, VLC, Audacity                                                                       |
+| **Strategy** | Create the first free option. |
+| **License** | General Public License ("Copyleft") |
+| **Business Model** | Consulting. Enable large systems which create programming jobs. |
+| **Example** | Linux kernel, bash, Python, nmap, Git, MySQL, VLC, Audacity |
 
 ---
 
-| Risk | We could be liable for damages caused by the software.                                                                          |
+| Risk | We could be liable for damages caused by the software. |
 |------|--|
-| Strategy | Include an "as-is" disclaimer.                                                                                         |
-| License | MIT License                                                                                                                   |
-| Business Model | Contracting. Build systems whose components can be maintained by the community. "Commoditize your complements." |
-| Example | X11, GitLab, PuTTy, curl, Ruby on Rails, Node.js, Lua, Rust, Julia, Nim, Netlify CMS, NewsBlur                             |
+| Strategy | Include an "as-is" disclaimer. |
+| **License** | MIT License |
+| **Business Model** | Contracting. Build systems whose components can be maintained by the community. "Commoditize your complements." |
+| **Example** | X11, GitLab, PuTTy, curl, Ruby on Rails, Node.js, Lua, Rust, Julia, Nim, Netlify CMS, NewsBlur |
 
 ---
 
-| Risk | We could be defamed by association with some user of the software.                                                              |
+| Risk | We could be defamed by association with some user of the software. |
 |------|--|
-| Strategy | Include a non-endorsement disclaimer.                                                                                      |
-| License | BSD 3-clause License                                                                                                         |
-| Business Model | Build large interoperable systems. Rough consensus and working code.                                           |
-| Example | BSD, CMake, CMU Sphinx, Dart, Go, Nginx                                                                                     |
+| **Strategy** | Include a non-endorsement disclaimer. |
+| **License** | BSD 3-clause License |
+| **Business Model** | Build large interoperable systems. Rough consensus and working code. |
+| **Example** | BSD, CMake, CMU Sphinx, Dart, Go, Nginx |
 
 ---
 
-| Risk | The software could produce incorrect results when used to make decisions about a nuclear facility.                              |
+| Risk | The software could produce incorrect results when used to make decisions about a nuclear facility. |
 |------|--|
-| Strategy | Include a no-nuke clause.                                                                                                  |
-| License | BSD no-nuke variant                                                                                                          |
-| Business Model |                                                                                                                        |
-| Example |                                                                                                                               |
+| **Strategy** | Include a no-nuke clause. |
+| **License** | BSD no-nuke variant |
+| **Business Model** | |
+| **Example** | |
 
 ---
 
-| Risk | Potential users and maintainers could ignore the software for fear of infringing our patents.                                   |
+| Risk | Potential users and maintainers could ignore the software for fear of infringing our patents. |
 |------|--|
-| Strategy | Include a patent grant.                                                                                                     |
-| License | Apache License                                                                                                                |
-| Business Model | Enable large systems, which can still be sold commercially.                                                         |
-| Example | Hadoop, Lucene, TensorFlow                                                                                                  |
-| Counterexample | React |
+| **Strategy** | Include a patent grant. |
+| **License** | Apache License |
+| **Business Model** | Enable large systems, which can still be sold commercially. |
+| **Example** | Hadoop, Lucene, TensorFlow |
+| **Counterexample** | React |
 
 						</textarea>
 					</section>
@@ -357,7 +357,8 @@
 				width: 1440,
 				height: 900,
 				margin: 0.1,
-				controls: false,
+				controls: true,
+				controlsTutorial: true,
 				progress: false,
 				slideNumber: "c/t",
 				showNotes: false,
