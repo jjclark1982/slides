@@ -62,6 +62,13 @@
 
 							[Markdown](https://daringfireball.net/projects/markdown/) is licensed under [a BSD-style license](https://daringfireball.net/projects/markdown/license.text)
 							<!-- .element: class="fragment fade-up" -->
+
+							<a href="https://fonts.adobe.com/fonts/league-gothic"><span style="font-family:League Gothic">League Gothic Font</span></a> is licensed under the [SIL Open Font License](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+							<!-- .element: class="fragment fade-up" -->
+
+							<a href="https://fonts.google.com/specimen/Lato"><span style="font-family:Lato">Lato Font</span></a> is licensed under the [SIL Open Font License web version](https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL_web)
+							<!-- .element: class="fragment fade-up" -->
+
 						</textarea>
 					</section>
 				</section>
@@ -86,7 +93,6 @@
 							- [Therac-25](https://en.wikipedia.org/wiki/Therac-25) (1985–1987)
 							- [Sudden unintended acceleration](https://en.wikipedia.org/wiki/Sudden_unintended_acceleration) (1987–)
 							- [List of self-driving car fatalities](https://en.wikipedia.org/wiki/List_of_self-driving_car_fatalities) (2016–)
-							- [Boeing 737 MAX](https://www.wired.com/story/boeing-737-max-8-ethiopia-crash-faa-software-fix-lion-air/) (2018)
 
 							---
 
@@ -142,7 +148,8 @@
 
 							- [List of failed and overbudget custom software projects](https://en.wikipedia.org/wiki/List_of_failed_and_overbudget_custom_software_projects) (1982–)
 
-							> “No amount of automation will have any significant <br>effect on the size or efficiency of a bureaucracy.”
+							> “No amount of automation will have any significant  
+							> effect on the size or efficiency of a bureaucracy.”
 							> 
 							> — [Why it is Important that Software Projects Fail](http://www.berglas.org/Articles/ImportantThatSoftwareFails/ImportantThatSoftwareFails.html), by Anthony Berglas (2008)
 
@@ -240,88 +247,95 @@
 							> 
 							> — [Risk-First Software Development](https://riskfirst.org/Quick-Summary), by Rob Moffat (2019)
 
----
+							---
 
-| Risk | none perceived |
-|------|--|
-| **Strategy** | just publish |
-| **License** | Public Domain, WTFPL, CC0 |
-| **Business Model** | sell separate warranties, charge for enhancements |
-| **Example** | Spacewar\!, qmail, SQLite |
+							| Risk | none perceived |
+							|------|------|
+							| **Strategy** | just publish |
+							| **License** | Public Domain, [WTFPL](https://spdx.org/licenses/WTFPL.html), [CC0](https://spdx.org/licenses/CC0-1.0.html) |
+							| **Business Model** | sell separate warranties, charge for enhancements |
+							| **Example** | Spacewar!, qmail, SQLite |
 
----
+							> “The three chief virtues of a programmer are:  
+							> Laziness, Impatience, and Hubris.”
+							> 
+							> — [Programming Perl](http://wiki.c2.com/?LazinessImpatienceHubris), by Larry Wall (1991)
 
-| Risk | If our hardware has no drivers, customers will not be able to use it. |
-|------|--|
-| **Strategy** | Include closed-source drivers with hardware |
-| **License** | Closed source, warranty void upon tampering |
-| **Business Model** | Hardware vendor |
-| **Example** | nvidia |
+							---
 
----
+							| Risk | If our hardware has no drivers, customers will not be able to use it. |
+							|------|------|
+							| **Strategy** | Include closed-source drivers with hardware |
+							| **License** | Closed source, warranty void upon tampering |
+							| **Business Model** | Hardware vendor |
+							| **Example** | nvidia |
+							| **Weakness** | No way for customer to maintain software they depend on. Robot kernels are always out-of-date. |
 
-| Risk | If customers do not directly pay for the software, we will not make any money. |
-|------|--|
-| **Strategy** | Pay per seat, with license keys or other DRM |
-| **License** | Closed source, pay per seat, 35-page End User License Agreement |
-| **Business Model** | Consumer software vendor |
-| **Example** | Mathematica, Adobe, typical PC video games |
+							---
 
----
+							| Risk | If customers do not directly pay for the software, we will not make any money. If customers could read the source code, they could find a way to avoid paying. |
+							|------|------|
+							| **Strategy** | Pay per seat, with license keys or other DRM |
+							| **License** | Closed source, pay per seat, 35-page End User License Agreement |
+							| **Business Model** | Consumer software vendor |
+							| **Example** | Mathematica, Adobe, typical PC video games |
 
-| Risk | If customers understand how much our software costs, they will buy less of it. |
-|------|--|
-| **Strategy** | Free download, no license keys |
-| **License** | Closed source, 500-page license agreement |
-| **Business Model** | Enterprise software vendor, with software license auditing (racketeering) |
-| **Example** | Oracle |
+							---
 
----
+							| Risk | If customers understand how much our software costs, they will buy less of it. |
+							|------|------|
+							| **Strategy** | Free download, no license keys |
+							| **License** | Closed source, 500-page license agreement |
+							| **Business Model** | Enterprise software vendor, with software license auditing (racketeering) |
+							| **Example** | Oracle |
 
-| Risk | The software could become impossible to maintain. The software industry could remain in the proprietary mode forever. |
-|------|--|
-| **Strategy** | Create the first free option. |
-| **License** | General Public License ("Copyleft") |
-| **Business Model** | Consulting. Enable large systems which create programming jobs. |
-| **Example** | Linux kernel, bash, Python, nmap, Git, MySQL, VLC, Audacity |
+							---
 
----
+							| Risk | The software could become impossible to maintain. The software industry could remain in the proprietary mode forever. |
+							|------|------|
+							| **Strategy** | Create the first free option. |
+							| **License** | General Public License ("Copyleft") |
+							| **Business Model** | Consulting. Enable large systems which create programming jobs. |
+							| **Example** | Linux kernel, bash, Python, nmap, Git, MySQL, VLC, Audacity |
 
-| Risk | We could be liable for damages caused by the software. |
-|------|--|
-| Strategy | Include an "as-is" disclaimer. |
-| **License** | MIT License |
-| **Business Model** | Contracting. Build systems whose components can be maintained by the community. "Commoditize your complements." |
-| **Example** | X11, GitLab, PuTTy, curl, Ruby on Rails, Node.js, Lua, Rust, Julia, Nim, Netlify CMS, NewsBlur |
+							TODO: GPL variants
 
----
+							---
 
-| Risk | We could be defamed by association with some user of the software. |
-|------|--|
-| **Strategy** | Include a non-endorsement disclaimer. |
-| **License** | BSD 3-clause License |
-| **Business Model** | Build large interoperable systems. Rough consensus and working code. |
-| **Example** | BSD, CMake, CMU Sphinx, Dart, Go, Nginx |
+							| Risk | We could be liable for damages caused by the software. |
+							|------|------|
+							| Strategy | Include an "as-is" disclaimer. |
+							| **License** | [MIT License](https://spdx.org/licenses/MIT.html) |
+							| **Business Model** | Contracting. Build systems whose components can be maintained by the community. “[Commoditize your complements.](https://www.joelonsoftware.com/2002/06/12/strategy-letter-v/)” |
+							| **Example** | X11, GitLab, PuTTy, curl, Ruby on Rails, Node.js, Lua, Rust, Julia, Nim, Netlify CMS, NewsBlur |
 
----
+							---
 
-| Risk | The software could produce incorrect results when used to make decisions about a nuclear facility. |
-|------|--|
-| **Strategy** | Include a no-nuke clause. |
-| **License** | BSD no-nuke variant |
-| **Business Model** | |
-| **Example** | |
+							| Risk | We could be defamed by association with some user of the software. |
+							|------|------|
+							| **Strategy** | Include a non-endorsement disclaimer. |
+							| **License** | [BSD 3-clause License](https://spdx.org/licenses/BSD-3-Clause.html) |
+							| **Business Model** | Build large interoperable systems. Rough consensus and working code. |
+							| **Example** | BSD, CMake, CMU Sphinx, Dart, Go, Nginx |
 
----
+							---
 
-| Risk | Potential users and maintainers could ignore the software for fear of infringing our patents. |
-|------|--|
-| **Strategy** | Include a patent grant. |
-| **License** | Apache License |
-| **Business Model** | Enable large systems, which can still be sold commercially. |
-| **Example** | Hadoop, Lucene, TensorFlow |
-| **Counterexample** | React |
+							| Risk | The software could produce incorrect results when used to make decisions about a nuclear facility. |
+							|------|------|
+							| **Strategy** | Include a no-nuke clause. |
+							| **License** | [BSD no-nuke variant](https://spdx.org/licenses/BSD-3-Clause-No-Nuclear-Warranty.html) |
+							| **Business Model** | |
+							| **Example** | |
 
+							---
+
+							| Risk | Potential users and maintainers could ignore the software for fear of infringing our patents. |
+							|------|------|
+							| **Strategy** | Include a patent grant. |
+							| **License** | [Apache License](https://spdx.org/licenses/Apache-2.0.html) |
+							| **Business Model** | Enable large systems, which can still be sold commercially. |
+							| **Example** | Hadoop, Lucene, TensorFlow |
+							| **Counterexample** | React |
 						</textarea>
 					</section>
 				</section>
@@ -333,14 +347,6 @@
 							> 
 							> — [Programming as Theory Building](http://pages.cs.wisc.edu/~remzi/Naur.pdf), by Peter Naur (1985)
 
-<!--
-							---
-
-							> “The three chief virtues of a programmer are:  
-							> Laziness, Impatience, and Hubris.”
-							> 
-							> — [Programming Perl](http://wiki.c2.com/?LazinessImpatienceHubris), by Larry Wall (1991)
--->
 						</textarea>
 					</section>
 				</section>
@@ -357,7 +363,7 @@
 				width: 1440,
 				height: 900,
 				margin: 0.1,
-				controls: true,
+				controls: (document.location.protocol != 'file:'),
 				controlsTutorial: true,
 				progress: false,
 				slideNumber: "c/t",
