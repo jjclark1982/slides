@@ -60,9 +60,7 @@
 							[Markdown](https://daringfireball.net/projects/markdown/) is licensed under [a BSD-style license](https://daringfireball.net/projects/markdown/license.text)
 							<!-- .element: class="fragment fade-up" -->
 
-							<a href="https://fonts.adobe.com/fonts/league-gothic"><span style="font-family:League Gothic">League Gothic Font</span></a> is licensed under the [SIL Open Font License](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
-							<!-- .element: class="fragment fade-up" -->
-
+							<a href="https://fonts.adobe.com/fonts/league-gothic"><span style="font-family:League Gothic">League Gothic Font</span></a> is licensed under the [SIL Open Font License](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)  
 							<a href="https://fonts.google.com/specimen/Lato"><span style="font-family:Lato">Lato Font</span></a> is licensed under the [SIL Open Font License web version](https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL_web)
 							<!-- .element: class="fragment fade-up" -->
 
@@ -134,6 +132,8 @@
 
 							- [Nimbus-7 and Stratospheric Ozone](https://earthobservatory.nasa.gov/features/RemoteSensingAtmosphere/remote_sensing5.php) (1978–1985)
 
+							<!-- .element: style="margin-bottom: 1em;" -->
+
 							> “On two occasions I have been asked, — ‘Pray, Mr. Babbage, if you put into the machine wrong figures, will the right answers come out?’ In one case a member of the Upper, and in the other a member of the Lower, House put this question. I am not able rightly to apprehend the kind of confusion of ideas that could provoke such a question.”
 							> 
 							> — [Passages from the Life of a Philosopher](https://en.wikisource.org/wiki/Passages_from_the_Life_of_a_Philosopher/Chapter_V), by Charles Babbage (1864)
@@ -143,6 +143,8 @@
 							Software production could run over budget without producing usable results
 
 							- [List of failed and overbudget custom software projects](https://en.wikipedia.org/wiki/List_of_failed_and_overbudget_custom_software_projects) (1982–)
+
+							<!-- .element: style="margin-bottom: 1em;" -->
 
 							> “No amount of automation will have any significant  
 							> effect on the size or efficiency of a bureaucracy.”
@@ -262,17 +264,26 @@
 							| Risk | If our hardware has no drivers, customers will not be able to use it. |
 							|------|------|
 							| **Strategy** | Include closed-source drivers with hardware |
-							| **License** | Closed source, warranty void upon tampering |
+							| **License** | Proprietary, Closed source, warranty void upon tampering |
 							| **Business Model** | Hardware vendor |
 							| **Example** | nvidia |
 							| **Weakness** | No way for customer to maintain software they depend on. Robot kernels are always out-of-date. |
 
 							---
 
-							| Risk | If customers do not directly pay for the software, we will not make any money. If customers could read the source code, they could find a way to avoid paying. |
+							| Risk | If customers do not directly pay for the software, we will not make any money. |
 							|------|------|
 							| **Strategy** | Pay per seat, with license keys or other DRM |
-							| **License** | Closed source, pay per seat, 35-page End User License Agreement |
+							| **License** | Proprietary. Source code may be available. |
+							| **Business Model** | Enterprise software vendor |
+							| **Example** | Unreal Engine |
+
+							---
+
+							| Risk | If customers could read the source code, they could find a way to avoid paying. |
+							|------|------|
+							| **Strategy** | Pay per seat, with license keys or other DRM |
+							| **License** | Proprietary, Closed source, 35-page End User License Agreement |
 							| **Business Model** | Consumer software vendor |
 							| **Example** | Mathematica, Adobe, typical PC video games |
 
@@ -281,7 +292,7 @@
 							| Risk | If customers understand how much our software costs, they will buy less of it. |
 							|------|------|
 							| **Strategy** | Free download, no license keys |
-							| **License** | Closed source, 500-page license agreement |
+							| **License** | Proprietary, Closed source, 500-page license agreement |
 							| **Business Model** | Enterprise software vendor, with software license auditing (racketeering) |
 							| **Example** | Oracle |
 
@@ -290,9 +301,9 @@
 							| Risk | The software could become impossible to maintain. The software industry could remain in the proprietary mode forever. |
 							|------|------|
 							| **Strategy** | Create the first free option. |
-							| **License** | General Public License ("Copyleft") |
+							| **License** | General Public License (GPL) ("Copyleft") |
 							| **Business Model** | Consulting. Enable large systems which create programming jobs. |
-							| **Example** | Linux kernel, bash, Python, nmap, Git, MySQL, VLC, Audacity |
+							| **Example** | Linux kernel, bash, Perl, Python, nmap, Git, MySQL, VLC, Audacity |
 
 							TODO: GPL variants
 
@@ -346,6 +357,19 @@
 							> “The continued adaptation, modification, and correction of errors in [programs] is essentially dependent on a certain kind of knowledge possessed by a group of programmers who are closely and continuously connected with them.”
 							> 
 							> — [Programming as Theory Building](http://pages.cs.wisc.edu/~remzi/Naur.pdf), by Peter Naur (1985)
+
+<!--
+							---
+
+							<h3>Addenda</h3>
+
+							- https://blog.codinghorror.com/pick-a-license-any-license/
+
+							- [Can plugins for closed source software use GPL'd libraries?](https://opensource.stackexchange.com/a/1481)
+
+							- [Business models for open-source software](https://en.wikipedia.org/wiki/Business_models_for_open-source_software)
+
+-->
 
 						</textarea>
 					</section>
