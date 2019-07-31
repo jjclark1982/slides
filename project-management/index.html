@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+  <html class="sl-root decks export offline loaded">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Software Project Management</title>
+    <meta name="description" content="Slides">
+
+    <link rel="stylesheet" type="text/css" href="./offline-v2.css">
+
+    <!-- Theme CSS -->
+    <style id="theme-css-output" type="text/css">
+      .reveal .bottom-bar {
+  background: #127ac6;
+  color: white;
+  padding: 0.25em 2em;
+  text-align: right;
+  position: absolute;
+  /*bottom: 3px;*/
+
+  bottom: 0;
+  right: 0;
+  left: 25%;
+  z-index: 1;
+}
+.reveal .bottom-bar::before {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 100%;
+  border-bottom: 2em solid #127ac6;
+  border-left: 2em solid transparent;
+}
+.reveal .bottom-bar > a,
+.reveal .bottom-bar > a:hover {
+  color: white;
+}
+.reveal .cricos-code {
+  position: absolute;
+  bottom: 1.5em;
+  color: white;
+  z-index: 1000;
+}
+.reveal .slides h1,
+.reveal .slides h2,
+.reveal .slides h3,
+.reveal .slides h4,
+.reveal .slides h5,
+.reveal .slides h6 {
+  color: #127ac6;
+}
+.reveal .slides .title-slide h1,
+.reveal .slides .title-slide h2,
+.reveal .slides .title-slide h3,
+.reveal .slides .title-slide h4,
+.reveal .slides .title-slide h5,
+.reveal .slides .title-slide h6 {
+  color: white;
+}
+
+    </style>
+
+    <!-- User CSS -->
+    <style id="user-css-output" type="text/css">
+      .reveal .slides h1,
+.reveal .slides h2,
+.reveal .slides h3,
+.reveal .slides h4,
+.reveal .slides h5,
+.reveal .slides h6 {
+  color: #127ac6;
+}
+.reveal .slides .title-slide h1,
+.reveal .slides .title-slide h2,
+.reveal .slides .title-slide h3,
+.reveal .slides .title-slide h4,
+.reveal .slides .title-slide h5,
+.reveal .slides .title-slide h6 {
+  color: white;
+}
+.reveal .feit-color {
+  background-color: #187cc4;
+}
+[data-markdown] {
+  text-align: left;
+}
+    </style>
+  </head>
+  <body class="reveal-viewport theme-font-opensans theme-color-white-blue">
+<script>
+  if (window.location.search.match(/print-pdf/gi)) {
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = '../lib/css/print.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  }
+</script>
+    <div class="reveal">
+      <div class="slides">
+        <section data-background-image="url('./feit-background.png')" class="title-slide">
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 0px; top: 243px; height: auto;">
+    <div class="sl-block-content front" data-placeholder-tag="h1" style="z-index: 13; text-align: left; font-size: 60%;" data-has-custom-html="" dir="ui">
+<h3>42889 iOS Application Development<br>
+41889 App Development in the iOS Environment</h3>
+
+<h1> </h1>
+
+<h1>Lecture 9 - Project Management</h1>
+</div>
+</div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 330px; left: 608px; top: 550px;">
+    <div class="sl-block-content" data-placeholder-tag="p" style="z-index: 12; text-align: right; font-size: 75%;">
+        <p>
+            <span class="s1">
+                <strong>UTS: Faculty of</strong>
+            </span>
+        </p>
+        <p>
+            <span class="s1">
+                <strong>Engineering and</strong>
+            </span>
+        </p>
+        <p>
+            <span class="s1">
+                <strong>Information Technology</strong>
+            </span>
+        </p>
+    </div>
+</div>
+<div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 192px; height: 81px; left: 739px; top: 32px;">
+    <div class="sl-block-content" style="z-index: 14;">
+        <img style="" data-natural-width="837" data-natural-height="354" data-src="./Uts-logo.png">
+    </div>
+</div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 0px; top: 618px;"><div class="sl-block-content" data-placeholder-tag="p" style="z-index: 15; color: rgb(255, 255, 255); font-size: 75%;">
+<p style="text-align: left;">UTS CRICOS Provider Code: 00099F</p>
+</div></div>
+<div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 2004px; height: 2004px; left: -1200px; top: -544px;"><div class="sl-block-content" data-shape-type="diamond" data-shape-fill-color="rgb(18, 122, 198)" data-shape-stretch="true" style="z-index: 10;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 2004 2004"><polygon points="2004,1002 1002,2004 0,1002 1002,0" class="shape-element" fill="rgb(18, 122, 198)"></polygon></svg></div></div></section>
+
+
+
+<section class="stack">
+  <h3><br>Software Project Management</h3>
+  <div data-markdown>
+    <textarea data-template>
+The bulk of application development work consists of adding **features** and removing **bugs**.
+
+What is the difference between a feature and a bug?<br><br>
+
+**Features** are required by forces outside your control (customer needs, sales promises, business regulations).
+<!-- .element: class="fragment fade-up" -->
+
+**Bugs** are under your control, so you have a duty of care to address them in the current development cycle.
+<!-- .element: class="fragment fade-up" -->
+
+<br>
+
+Therefore: if the cost of addressing an issue is not feasible in the current cycle, it must be a missing feature instead of a lingering bug.
+<!-- .element: class="fragment fade-up" -->
+
+    </textarea>
+  </div>
+</section>
+
+
+
+<section class="stack">
+  <h3><br>Lifecycle of a feature</h3>
+  <div data-markdown>
+    <textarea data-template>
+How to specify a feature
+
+- Risk of being too vague: building the wrong thing
+- Risk of being too specific: failure to solve the original problem
+
+User stories
+
+- "As a regular user, I need to be able to upload a profile picture."
+- "As a moderator, I need to remove inappropriate profile pictures."
+
+Do some features depend on other features?
+
+- Plan the project around that using [Gantt Charts](https://en.wikipedia.org/wiki/Gantt_chart).
+<img src="Pert_example_gantt_chart.gif">
+    </textarea>
+  </div>
+</section>
+<!-- 
+- design
+- prototype
+- testing
+ 
+ - How to describe problems with an application
+   - discoverability, affordance, engagement
+ -->
+
+
+<section class="stack">
+  <h3>Lifecycle of a bug</h3>
+  <div data-markdown>
+    <textarea data-template>
+1. Identify breakdowns, "funnies", or issues for investigation
+  - When users say something is not working, they are usually right.
+  - When they tell you how to fix it, they are usually wrong.
+1. File the bug
+  - A good bug report for a UI issue includes the action that was taken, the expected result, and the observed result.
+  - A good bug report for a code issue includes a<br>[Short, Self-contained, Runnable Example](http://sscce.org/).
+1. Implement a patch
+1. Request that the patch be pulled into the master codebase
+  - Verify that the patch fixes the original issue
+  - Review the code
+  - Accept the pull request
+    </textarea>
+  </div>
+</section>
+
+
+<section class="stack">
+  <h3>How to review code</h3>
+  <div data-markdown>
+    <textarea data-template>
+- Good criticism is impersonal, specific, and actionable.
+
+- Personal culpability is a counterproductive concept  
+  - [It's about what broke, not who broke it](https://rachelbythebay.com/w/2018/03/27/whowhat/) – Rachel Kroll
+
+- [Exercises in Programming Style](https://www.crcpress.com/Exercises-in-Programming-Style/Lopes/p/book/9781482227376)
+
+- [The Architecture of Open Source Applications](http://aosabook.org/en/index.html)
+
+- [Write code that is easy to delete, not easy to extend.](https://programmingisterrible.com/post/139222674273/write-code-that-is-easy-to-delete-not-easy-to) – tef
+
+- Many different styles and patterns are effective.
+
+> I'm a huge proponent of designing your code around the data, rather than the other way around, and I think it's one of the reasons git has been fairly successful […] I will, in fact, claim that the difference between a bad programmer and a good one is whether he considers his code or his data structures more important.  
+
+– Linus Torvalds
+    </textarea>
+  </div>
+</section>
+
+
+<section class="stack">
+  <h3><br>Software complexity</h3>
+  <section data-markdown>
+    <textarea data-template>
+- Features are *Essential complexity*.
+- Bugs are *Incidental complexity*.  
+
+– [No Silver Bullet](http://worrydream.com/refs/Brooks-NoSilverBullet.pdf), by Fred Brooks
+
+
+> **Complexity** is the degree to which a system or component has a design or implementation that is difficult to understand and verify.  
+
+– The IEEE Standard Computer Dictionary
+
+
+- Not an absolute scale
+- Someone more familiar with the *theory* of a particular program can handle more complexity, therefore training helps
+  - [Programming as Theory Building](http://pages.cs.wisc.edu/~remzi/Naur.pdf), by Peter Naur
+
+– [NASA Study on Flight Software Complexity](https://www.nasa.gov/pdf/418878main_FSWC_Final_Report.pdf)
+
+    </textarea>
+  </section>
+  <section>
+    <img style="float:left; margin-right:2em;" src="Some_types_of_control_flow_graphs.svg">
+    <br>
+    <div data-markdown>
+      <textarea data-template>
+[Cyclomatic Complexity](https://en.wikipedia.org/wiki/Cyclomatic_complexity)
+
+Verifying a program's behavior means verifying every possible code path.
+
+This liability can grow exponentially if code paths depend on shared mutable state (tight coupling).
+</textarea>
+    </div>
+
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+**Reliable software is possible.**
+
+> Most programming environments are meta-engineered to make typical software easier to write. They should instead be meta-engineered to make *incorrect* software *harder* to write.
+
+– [Ten years of qmail 1.0](http://cr.yp.to/qmail/qmailsec-20071101.pdf), by Daniel J. Bernstein
+
+> The AXD301 has achieved 99.9999999% reliability. Why is this? No shared state, plus a sophisticated error recovery model.  
+
+– [What's all this fuss about Erlang?](https://pragprog.com/articles/erlang/), by Joe Armstrong  
+<!-- See also: [Making reliable distributed systems in the presence of software errors](http://erlang.org/download/armstrong_thesis_2003.pdf) -->
+
+-----
+
+**Reliability is not emphasised by most business models.**
+
+- [Knight Capital Says Trading Glitch Cost It $440 Million](https://dealbook.nytimes.com/2012/08/02/knight-capital-says-trading-mishap-cost-it-440-million/)
+- [Sudden Unintended Acceleration](https://en.wikipedia.org/wiki/Sudden_unintended_acceleration)
+- [Therac-25](https://en.wikipedia.org/wiki/Therac-25)
+</textarea>
+  </section>
+</section>
+
+
+
+<section class="stack">
+  <h3><br>Simplicity and Learnability</h3>
+  <div data-markdown>
+    <textarea data-template>
+[Learnable Programming](http://worrydream.com/#!/LearnableProgramming), by Bret Victor
+
+[Mindstorms](http://worrydream.com/refs/Papert%20-%20Mindstorms%201st%20ed.pdf), by Semour Papert
+
+> If we wish to count lines of code, we should not regard them as "lines produced" but as "lines spent": the current conventional wisdom is so foolish as to book that count on the wrong side of the ledger.
+
+– [On the cruelty of really teaching computing science](https://www.cs.utexas.edu/~EWD/transcriptions/EWD10xx/EWD1036.html), by Edsger W. Dijkstra
+
+[The Design of Everyday Things](https://www.goodreads.com/book/show/840.The_Design_of_Everyday_Things), by Donald Norman
+
+[The Humane Interface](https://www.goodreads.com/book/show/344726.The_Humane_Interface), by Jef Raskin
+    </textarea>
+  </div>
+</section>
+
+
+
+
+
+<section data-background-image="url('./feit-background.png')" class="title-slide">
+
+
+
+<div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 2004px; height: 2004px; left: -1200px; top: -544px;"><div class="sl-block-content" data-shape-type="diamond" data-shape-fill-color="rgb(18, 122, 198)" data-shape-stretch="true" style="z-index: 10;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 2004 2004"><polygon points="2004,1002 1002,2004 0,1002 1002,0" class="shape-element" fill="rgb(18, 122, 198)"></polygon></svg></div></div></section>
+
+
+      </div>
+        <div id="theme-html-output"><div class="bottom-bar">
+    <a href="http://feit.uts.edu/" target="_blank">feit.uts.edu</a>
+</div>
+</div>
+    </div>
+
+    <div class="navigate-left"></div>
+
+    <script>
+      var SLConfig = {
+          "deck": {
+              "id": 940004,
+              "slug": "ios-project-management",
+              "title": "Software Project Management",
+              "description": "",
+              "width": 960,
+              "height": 720,
+              "visibility": "self",
+              "published_at": null,
+              "sanitize_messages": null,
+              "thumbnail_url": null,
+              "view_count": 0,
+              "user": {
+                  "id": 672195,
+                  "username": "jjclark",
+                  "name": "Jesse Clark",
+                  "description": "",
+                  "thumbnail_url": "https://www.gravatar.com/avatar/1da63b68b6fd0e6436a28aa44f884ba3?s=140\u0026d=https%3A%2F%2Fs3.amazonaws.com%2Fstatic.slid.es%2Fimages%2Fdefault-profile-picture.png",
+                  "paid": true,
+                  "pro": true,
+                  "lite": false,
+                  "team_id": 1213,
+                  "settings": {
+                      "id": 521087,
+                      "present_controls": false,
+                      "present_upsizing": true,
+                      "present_pointer": false,
+                      "present_notes": true
+                  },
+                  "enterprise": true,
+                  "membership": {
+                      "role": "owner",
+                      "manager": true,
+                      "activated": true
+                  }
+              },
+              "background_transition": "fade",
+              "transition": "slide",
+              "theme_id": 1455,
+              "theme_font": "opensans",
+              "theme_color": "white-blue",
+              "auto_slide_interval": 0,
+              "comments_enabled": true,
+              "forking_enabled": false,
+              "rolling_links": false,
+              "center": false,
+              "should_loop": false,
+              "share_notes": false,
+              "slide_number": true,
+              "rtl": false,
+              "version": 2,
+              "collaborative": false,
+              "deck_user_editor_limit": 1,
+              "data_updated_at": 1490266417157,
+              "font_typekit": null,
+              "font_google": null,
+              "notes": {}
+          }
+      };
+      SLConfig.current_user = {
+        name: "Jesse Clark",
+        username: "jjclark",
+        pro: true
+      };
+
+        SLConfig.theme = {"id":1455,"created_at":"2017-03-19T06:22:49.944Z","updated_at":"2017-03-19T08:37:19.573Z","name":"FEIT Presentation","thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/9d02f9c316d4e05b2db588cd59fa23b9/thumb.jpg","sanitize_messages":null,"slide_template_ids":[],"font_typekit":"","font_google":"","width":960,"height":720};
+
+      // Use local fonts
+      SLConfig.fonts_url = '../lib/fonts/';
+    </script>
+
+    <script src="../lib/js/head.min.js"></script>
+    <script src="../lib/js/reveal.js"></script>
+
+    <!-- Initialize the presentation -->
+    <script>
+      Reveal.initialize({
+        width: SLConfig.deck.width,
+        height: SLConfig.deck.height,
+        margin: 0.05,
+        minScale: 0.2,
+
+        controls: true,
+        progress: true,
+        history: true,
+        mouseWheel: false,
+        showNotes: SLConfig.deck.share_notes,
+        slideNumber: SLConfig.deck.slide_number,
+
+        pdfMaxPagesPerSlide: 1,
+
+        autoSlide: SLConfig.deck.auto_slide_interval || 0,
+        autoSlideStoppable: true,
+
+        center: SLConfig.deck.center || false,
+        loop: SLConfig.deck.should_loop || false,
+        rtl: SLConfig.deck.rtl || false,
+
+        transition: SLConfig.deck.transition,
+        backgroundTransition: SLConfig.deck.background_transition,
+
+        markdown: {
+            smartypants: true
+        },
+
+        dependencies: [
+          { src: '../lib/reveal-plugins/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: '../lib/reveal-plugins/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: '../lib/reveal-plugins/highlight/highlight.js', async: true, callback: function() { hljs.initHighlighting(); hljs.initHighlightingOnLoad(); } },
+          { src: '../lib/reveal-plugins/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+    </script>
+
+    
+
+  </body>
+</html>
