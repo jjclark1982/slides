@@ -1,0 +1,43 @@
+Space Mission Evaluation
+
+Mission manager wants to know whether it is safe to launch.
+Asks each team (propulsion, avionics, life support, etc) whether their system is in good condition.
+Teams inspect parts and connections, file reports on each one.
+If all the reports are closed (accepted), then it is probably safe to launch.
+So why do still things go wrong?
+Conditions can change between when reports are written and when they are read.
+In a paper-based system, this can take hours.
+
+
+- Challenger disaster was caused by poor communication
+- communication was impeded by slow lookup process (paper)
+- transitioned to a database that could produce results in time for regular evaluation meetings
+- the database is meant to answer the question "What could go wrong with this mission?"
+    - Are there any unresolved problems with the hardware?
+
+        SELECT * FROM problems WHERE status = 'open';
+
+    - What are the most dangerous issues discovered during vehicle assembly?
+
+        SELECT * FROM problems ORDER BY severity desc;
+
+    - Which parts are effected by cold weather?
+
+        SELECT part_id FROM problems WHERE full_text LIKE "%cold%";
+
+- interface for building WHERE clause
+    - bugzilla
+    - itunes
+    - technology to translate compound selections into SQL
+    - performance implications of OR vs UNION
+
+- interface for building SELECT clause
+
+- interface for building ORDER BY clause
+
+- visibility restrictions and ITAR
+
+-----
+
+many problems are analagous to ticket-tracking systems
+ticket tracking for software projects (bug tracking) allows developers to "eat their own dogfood"

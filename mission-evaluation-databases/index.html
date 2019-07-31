@@ -1,0 +1,209 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/moon.css">
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <title>Space Mission Databases</title>
+    <script src="lib/js/head.min.js"></script>
+    <style>
+      .reveal img.logo{border:0; box-shadow: none; background: none;}
+      .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {text-transform: none;}
+      .reveal .shadow {text-shadow: 0 4px 5px black;}
+    </style>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h2>Mission Evaluation Databases</h2>
+          <p>Jesse Clark</p>
+          <!-- <p><a href="mailto:Jesse.Clark@uts.edu.au">Jesse.Clark@uts.edu.au</a></p> -->
+          <img class="logo" data-src="img/NASA_logo.svg" alt="NASA">
+        </section>
+
+        <section>
+          <h3>When is it safe to launch a space mission?</h3>
+          <p class="fragment">When the mission evaluation manager decides it is safe</p>
+          <p class="fragment">based on input from each team<br> (propulsion, avionics, life support, etc)</p>
+          <p class="fragment">based on reports from technicians that have been analyzed by engineers and closed as acceptably safe.</p>
+          <blockquote class="fragment">&ldquo;We don't fly with open paper.&rdquo;</blockquote>
+        </section>
+
+        <section>
+          <span>So why do things still go wrong?</span>
+          <img data-src="img/Challenger-Explosion.jpg">
+        </section>
+          
+        <section>
+          <h3>Paper</h3>
+          <p>With a paper-based system, searching or summarizing all outstanding reports can take hours, in which time conditions can change.</p>
+        </section>
+
+        <section>
+          <h3>SQL</h3>
+          <section></section>
+          <section>
+            <p>We don't fly with open paper.</p>
+            <pre><code class="language-sql">
+  SELECT
+    COUNT(*)
+  FROM
+    problem_reports
+  WHERE
+    status = "OPEN";
+            </code></pre>
+          </section>
+          <section>
+            <p>Which components should we re-check in cold weather?</p>
+            <pre><code class="language-sql">
+  SELECT
+    component, COUNT(*), MAX(severity)
+  FROM
+    problem_reports
+  WHERE
+    description LIKE "%cold weather%"
+  GROUP BY
+    component
+  ORDER BY
+    MAX(severity) DESC;
+            </code></pre>
+          </section>
+          <section>
+            <p>Have any parts from Manufacturer X<br>had problems in the last 3 years?<br>(A problem can link to a part.)</p>
+            <pre><code class="language-sql">
+  SELECT
+    part_id
+  FROM
+    problem_reports
+    LEFT JOIN parts ON parts.id = problem_reports.part_id
+  WHERE
+    parts.manufacturer = "X"
+    AND
+    problem_reports.date > DATE_SUB(NOW(), INTERVAL 3 YEAR);
+            </code></pre>
+          </section>
+        </section>
+
+        <section>
+          <h2><img class="logo" data-src="img/Oracle_logo.svg" alt="Oracle"></h2>
+          <section></section>
+          <!-- <section data-background-video="img/Burning Money-9Ep_h8vxgEU.mp4"></section> -->
+          <section>
+            <img class="logo" data-src="img/burning-money.png">
+          </section>
+        </section>
+
+        <section>
+          <h3 style="margin-top: -1em"><img class="logo" data-src="img/MySQL.svg" alt="MySQL"></h3>
+          <ul>
+            <li>Active community building open-source tools for similar problems such as Customer Relationship Management.</li>
+            <li>Find one that is close to the target domain.
+              <br>
+              Using a software bug-tracking system allows developers to &ldquo;eat their own dogfood&rdquo; as they work on it.
+            </li>
+            <li>Change vocabulary to make it match the domain fully.</li>
+            <li>Add custom functionality by writing new HTML frontend and SQL backend code.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Web Application</h3>
+          <section>
+            <ul>
+              <li>Manage user accounts</li>
+              <li>Edit schemas</li>
+              <li>Display complex records</li>
+              <li>Draw charts and graphs</li>
+              <li>Automatically generate complex queries</li>
+            </ul>
+          </section>
+          <section>
+            <ul>
+              <li>
+                <p>Automatically generate complex queries</p>
+                <p>Have any parts from Manufacturer X<br>had problems in the last 3 years?<br>(A problem can link to multiple parts.)</p>
+              </li>
+            </ul>
+            <pre><code class="language-sql">
+  SELECT
+    problem_reports.id, title, severity, likelihood, status
+  FROM
+    problem_reports
+    LEFT JOIN problem_parts
+      ON problem_parts.problem_id = problem_reports.id
+    LEFT JOIN parts
+      ON problem_parts.part_id = parts.id
+  WHERE
+    parts.manufacturer = "X"
+    AND
+    parts.maintenance_date > DATE_SUB(NOW(), INTERVAL 3 YEAR);
+  GROUP BY
+    problem_reports.id
+            </code></pre>
+          </section>
+        </section>
+
+        <section>
+          <h3 style="margin: -.75em"><img class="logo" data-src="img/bugzilla.png" width="50%" alt="Bugzilla"></h3>
+
+          <section>
+            <img data-src="img/query.png">
+          </section>
+
+          <section>
+            <img data-src="img/buglist.png">
+          </section>
+        </section>
+
+        <section>
+          <h3>Web Services</h3>
+          <ul>
+            <li>Display <i>very</i> complex records by loading partial views independently</li>
+            <li>Improve maintainability
+              <ul>
+                <li>Loosely couple frontend to backend</li>
+                <li>Deploy new features without impacting existing features</li>
+              </ul>
+            </li>
+            <li>
+              Interface with outside tools
+              <ul>
+                <li>Import / Export</li>
+                <li>Custom reports and analytics</li>
+                <li>Very large file attachments</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Mission Evaluation Databases</h3>
+          <p>Jesse Clark</p>
+          <p><a href="mailto:Jesse.Clark@uts.edu.au">Jesse.Clark@uts.edu.au</a></p>
+          <p>
+            <img class="logo" data-src="img/NASA_logo.svg" alt="NASA">
+            <!-- <img class="logo" style="margin:-2em;" src="img/magic-lab-logo.svg"> -->
+          </p>
+          <!-- <p>University of Technology Sydney</p> -->
+        </section>
+      </div>
+    </div>
+    <script src="js/reveal.js"></script>
+    <script>
+      Reveal.initialize({
+        controls: false,
+        progress: true,
+        history: true,
+        slideNumber: true,
+        center: false,
+        fragments: true,
+        transition: 'slide',
+
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+        ]
+      });
+    </script>
+  </body>
+</html>
