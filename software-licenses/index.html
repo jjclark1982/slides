@@ -64,6 +64,13 @@
 							<a href="https://fonts.google.com/specimen/Lato"><span style="font-family:Lato">Lato Font</span></a> is licensed under the [SIL Open Font License web version](https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL_web)
 							<!-- .element: class="fragment fade-up" -->
 
+							Note:
+
+							This presentation is software.
+
+							Example of creative commons license being used:  
+							https://www.flickr.com/photos/myhf/968395545
+
 						</textarea>
 					</section>
 				</section>
@@ -203,6 +210,10 @@
 					<section data-markdown data-separator="^\r?\n---\r?\n$">
 						<textarea data-template>
 
+							Note:
+
+							This page intentionally left blank.
+
 							---
 
 							The main risk we face when we choose to use some software is that we may not have the right to use it.
@@ -234,6 +245,12 @@
 
 							These rights are provided in the form of a software license.
 
+							Notes:
+
+							That concludes the licenses we need to consume.
+
+							What about the licenses we need to produce?
+
 						</textarea>
 					</section>
 				</section>
@@ -247,11 +264,13 @@
 
 							---
 
-							| Risk | none perceived |
+							### Public Domain
+
+							| **Risk** | none perceived |
 							|------|------|
 							| **Strategy** | just publish |
 							| **License** | Public Domain, [WTFPL](https://spdx.org/licenses/WTFPL.html), [CC0](https://spdx.org/licenses/CC0-1.0.html) |
-							| **Business Model** | sell separate warranties, charge for enhancements |
+							| **Business Model** | sell separate warranties, charge for enhancements, patron-funded work |
 							| **Example** | Spacewar!, qmail, SQLite |
 
 							> “The three chief virtues of a programmer are:  
@@ -261,55 +280,65 @@
 
 							---
 
-							| Risk | If our hardware has no drivers, customers will not be able to use it. |
+							### Proprietary
+
+							| **Risk** | If our hardware has no drivers, customers will not be able to use it. |
 							|------|------|
 							| **Strategy** | Include closed-source drivers with hardware |
-							| **License** | Proprietary, Closed source, warranty void upon tampering |
+							| **License** | Closed source, warranty void upon tampering |
 							| **Business Model** | Hardware vendor |
 							| **Example** | nvidia |
 							| **Weakness** | No way for customer to maintain software they depend on. Robot kernels are always out-of-date. |
 
 							---
 
-							| Risk | If customers do not directly pay for the software, we will not make any money. |
+							### Proprietary
+
+							| **Risk** | If customers do not directly pay for the software, we will not make any money. |
 							|------|------|
 							| **Strategy** | Pay per seat, with license keys or other DRM |
-							| **License** | Proprietary. Source code may be available. |
+							| **License** | Source code may be available. |
 							| **Business Model** | Enterprise software vendor |
 							| **Example** | Unreal Engine |
 
 							---
 
-							| Risk | If customers could read the source code, they could find a way to avoid paying. |
+							### Proprietary
+
+							| **Risk** | If customers could read the source code, they could find a way to avoid paying (or otherwise damage us). |
 							|------|------|
 							| **Strategy** | Pay per seat, with license keys or other DRM |
-							| **License** | Proprietary, Closed source, 35-page End User License Agreement |
+							| **License** | Closed source, 35-page End User License Agreement |
 							| **Business Model** | Consumer software vendor |
 							| **Example** | Mathematica, Adobe, typical PC video games |
 
 							---
 
-							| Risk | If customers understand how much our software costs, they will buy less of it. |
+							### Proprietary
+
+							| **Risk** | If customers understand how much our software costs, they will buy less of it. |
 							|------|------|
 							| **Strategy** | Free download, no license keys |
-							| **License** | Proprietary, Closed source, 500-page license agreement |
+							| **License** | Closed source |
 							| **Business Model** | Enterprise software vendor, with software license auditing (racketeering) |
 							| **Example** | Oracle |
 
 							---
 
-							| Risk | The software could become impossible to maintain. The software industry could remain in the proprietary mode forever. |
-							|------|------|
-							| **Strategy** | Create the first free option. |
-							| **License** | General Public License (GPL) ("Copyleft") |
-							| **Business Model** | Consulting. Enable large systems which create programming jobs. |
-							| **Example** | Linux kernel, bash, Perl, Python, nmap, Git, MySQL, VLC, Audacity |
+							### Copyleft
 
-							TODO: GPL variants
+							| **Risk** | The software could become impossible to maintain. The software industry could remain in the proprietary mode forever. |
+							|------|------|
+							| **Strategy** | Create the first free option, spread OSS virally. |
+							| **License** | General Public License ([GPL](https://spdx.org/licenses/GPL-1.0-or-later.html), [LGPL](https://spdx.org/licenses/LGPL-2.0-or-later.html), [AGPL](https://spdx.org/licenses/AGPL-1.0-or-later.html)) |
+							| **Business Model** | Consulting. Enable large systems which create programming jobs. |
+							| **Example** | Linux kernel, bash, Perl, Python, nmap, Git, MySQL, VLC, Audacity, Blender |
 
 							---
 
-							| Risk | We could be liable for damages caused by the software. |
+							### Permissive
+
+							| **Risk** | We could be liable for damages caused by the software. |
 							|------|------|
 							| **Strategy** | Include an "as-is" disclaimer. |
 							| **License** | [MIT License](https://spdx.org/licenses/MIT.html) |
@@ -322,16 +351,20 @@
 
 							---
 
-							| Risk | We could be defamed by association with some user of the software. |
+							### Permissive
+
+							| **Risk** | We could be defamed by association with some user of the software. |
 							|------|------|
 							| **Strategy** | Include a non-endorsement disclaimer. |
-							| **License** | [BSD 3-clause License](https://spdx.org/licenses/BSD-3-Clause.html) |
+							| **License** | [BSD License](https://spdx.org/licenses/BSD-3-Clause.html) |
 							| **Business Model** | Build large interoperable systems. Rough consensus and working code. |
 							| **Example** | BSD, CMake, CMU Sphinx, Dart, Go, Nginx |
 
 							---
 
-							| Risk | The software could produce incorrect results when used to make decisions about a nuclear facility. |
+							### Permissive
+
+							| **Risk** | The software could produce incorrect results when used to make decisions about a nuclear facility. |
 							|------|------|
 							| **Strategy** | Include a no-nuke clause. |
 							| **License** | [BSD no-nuke variant](https://spdx.org/licenses/BSD-3-Clause-No-Nuclear-Warranty.html) |
@@ -340,13 +373,30 @@
 
 							---
 
-							| Risk | Potential users and maintainers could ignore the software for fear of infringing our patents. |
+							### Permissive
+
+							| **Risk** | Potential users and maintainers could ignore the software for fear of infringing our patents. |
 							|------|------|
 							| **Strategy** | Include a patent grant. |
 							| **License** | [Apache License](https://spdx.org/licenses/Apache-2.0.html) |
 							| **Business Model** | Enable large systems, which can still be sold commercially. |
 							| **Example** | Hadoop, Lucene, TensorFlow |
 							| **Counterexample** | React |
+
+							---
+
+							### Mixed Licenses
+
+							- [Multi-Licensing](https://en.wikipedia.org/wiki/Multi-licensing)
+
+							- Perl, nginx, SQLite
+
+							- Plug-in architecture  
+
+								- [Can plugins for closed source software use GPL'd libraries?](https://opensource.stackexchange.com/a/1481)
+
+								- [ROS2: nonfree plugins](https://index.ros.org/doc/ros2/Installation/Install-Connext-Security-Plugins/)
+
 						</textarea>
 					</section>
 				</section>
@@ -358,18 +408,13 @@
 							> 
 							> — [Programming as Theory Building](http://pages.cs.wisc.edu/~remzi/Naur.pdf), by Peter Naur (1985)
 
-<!--
-							---
 
-							<h3>Addenda</h3>
+							Notes:
 
 							- https://blog.codinghorror.com/pick-a-license-any-license/
 
-							- [Can plugins for closed source software use GPL'd libraries?](https://opensource.stackexchange.com/a/1481)
-
 							- [Business models for open-source software](https://en.wikipedia.org/wiki/Business_models_for_open-source_software)
 
--->
 
 						</textarea>
 					</section>
