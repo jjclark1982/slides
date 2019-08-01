@@ -35,19 +35,21 @@
 		<div class="reveal">
 			<div class="slides">
 				<section>
-					<section>
-						<h1>Software Licenses</h1>
-						<p>and The Business Models that Love Them</p>
-					</section>
 					<section data-markdown data-separator="^\r?\n---\r?\n$">
 						<textarea data-template>
+							# Software Licenses
+
+							and The Business Models that Love Them
+
+							---
+
 							by Jesse Clark  
 							University of Technology Sydney
 
 							Copyright © 2019
 							<!-- .element: class="fragment fade-up" -->
 
-							<p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="cc-by-4.0-88x31.png" /></a><br />This work is licensed under a <br><a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
+							<p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0; margin: 0;" width="176" height="62" src="cc-by-4.0-88x31.png" /></a><br />This work is licensed under a <br><a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
 							<!-- .element: class="fragment fade-up" -->
 
 							[`reveal.js`](https://revealjs.com/) is licensed under the [MIT License](https://github.com/hakimel/reveal.js/blob/master/LICENSE)
@@ -87,7 +89,6 @@
 							> — [No Silver Bullet](http://www.cs.nott.ac.uk/~pszcah/G51ISS/Documents/NoSilverBullet.html), by Fred Brooks (1986)
 
 							---
-
 
 							Software could kill someone
 
@@ -446,8 +447,8 @@
 					smartypants: true
 				},
 				dependencies: [
-					{ src: '../lib/reveal-plugins/markdown/marked.js' },
-					{ src: '../lib/reveal-plugins/markdown/markdown.js' },
+					{ src: '../lib/reveal-plugins/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../lib/reveal-plugins/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: '../lib/reveal-plugins/notes/notes.js', async: true },
 					{ src: '../lib/reveal-plugins/highlight/highlight.js', async: true },
 					{ src: '../lib/reveal-plugins/search/search.js', async: true}
