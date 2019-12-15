@@ -119,7 +119,23 @@
 							- [Morris Worm](http://groups.csail.mit.edu/mac/classes/6.805/articles/morris-worm.html) (1988)
 							- [Medtronic cardiac implant](https://en.wikipedia.org/wiki/Medtronic#Technology_safety) (2008–2011)
 							- [Heartbleed](http://heartbleed.com/) (2014)
-							- [“`goto fail`” SSL Bug](https://nakedsecurity.sophos.com/2014/02/24/anatomy-of-a-goto-fail-apples-ssl-bug-explained-plus-an-unofficial-patch/) (2014)
+							- [iOS SSL Bug](https://nakedsecurity.sophos.com/2014/02/24/anatomy-of-a-goto-fail-apples-ssl-bug-explained-plus-an-unofficial-patch/) (2014)  
+							  ```c
+							  if ((err = SSLFreeBuffer(&hashCtx)) != 0)
+							      goto fail;
+							  if ((err = ReadyHash(&SSLHashSHA1, &hashCtx)) != 0)
+							      goto fail;
+							  if ((err = SSLHashSHA1.update(&hashCtx, &clientRandom)) != 0)
+							      goto fail;
+							  if ((err = SSLHashSHA1.update(&hashCtx, &serverRandom)) != 0)
+							      goto fail;
+							  if ((err = SSLHashSHA1.update(&hashCtx, &signedParams)) != 0)
+							      goto fail;
+							      goto fail;
+							  if ((err = SSLHashSHA1.final(&hashCtx, &hashOut)) != 0)
+							      goto fail;
+							  ```
+							  <!-- .element: style="width: 100%" -->
 							- [Node.js `event-stream` hack](https://www.eweek.com/security/node.js-event-stream-hack-exposes-supply-chain-security-risks) (2018)
 							- [Zoom video conferencing](https://www.schneier.com/blog/archives/2019/07/zoom_vulnerabil.html) (2019)
 
@@ -139,10 +155,12 @@
 							Software could give incorrect analysis of strategic data
 
 							- [Nimbus-7 and Stratospheric Ozone](https://earthobservatory.nasa.gov/features/RemoteSensingAtmosphere/remote_sensing5.php) (1978–1985)
+							- [Xerox character substitution](http://www.dkriesel.com/en/blog/2013/0802_xerox-workcentres_are_switching_written_numbers_when_scanning) (2005–2013)
 
 							<!-- .element: style="margin-bottom: 1em;" -->
 
-							> “On two occasions I have been asked, — ‘Pray, Mr. Babbage, if you put into the machine wrong figures, will the right answers come out?’ In one case a member of the Upper, and in the other a member of the Lower, House put this question. I am not able rightly to apprehend the kind of confusion of ideas that could provoke such a question.”
+							> “On two occasions I have been asked, — ‘Pray, Mr. Babbage, if you put into the machine wrong figures, will the right answers come out?’ …  
+							> I am not able rightly to apprehend the kind of confusion of ideas that could provoke such a question.”
 							> 
 							> — [Passages from the Life of a Philosopher](https://en.wikisource.org/wiki/Passages_from_the_Life_of_a_Philosopher/Chapter_V), by Charles Babbage (1864)
 
@@ -157,7 +175,8 @@
 							> “No amount of automation will have any significant  
 							> effect on the size or efficiency of a bureaucracy.”
 							> 
-							> — [Why it is Important that Software Projects Fail](http://www.berglas.org/Articles/ImportantThatSoftwareFails/ImportantThatSoftwareFails.html), by Anthony Berglas (2008)
+							> — [Why it is Important that Software Projects Fail](http://www.berglas.org/Articles/ImportantThatSoftwareFails/ImportantThatSoftwareFails.html),  
+							> by Anthony Berglas (2008)
 
 							---
 
@@ -300,7 +319,7 @@
 							| **Strategy** | Pay per seat, with license keys or other DRM |
 							| **License** | Source code may be available. |
 							| **Business Model** | Enterprise software vendor |
-							| **Example** | Unreal Engine |
+							| **Example** | Unreal Engine, Aseprite |
 
 							---
 
