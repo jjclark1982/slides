@@ -8,7 +8,8 @@
   "scripts": {
     "test": "grunt test",
     "start": "grunt serve",
-    "build": "grunt"
+    "build": "grunt",
+    "pdf": "decktape --chrome-path '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --size 1440x900 reveal 'http://localhost:5000/software-licenses/' software-licenses.pdf"
   },
   "author": {
     "name": "Hakim El Hattab",
@@ -40,5 +41,9 @@
     "mustache": "^2.3.0",
     "socket.io": "^2.2.0"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "decktape": "^2.9.3",
+    "serve": "^11.1.0"
+  }
 }
