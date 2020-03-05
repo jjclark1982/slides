@@ -1,0 +1,336 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Social Robotics</title>
+
+    <link rel="stylesheet" href="../lib/css/reset.css">
+    <link rel="stylesheet" href="../lib/css/reveal.css">
+    <link rel="stylesheet" href="../lib/reveal-themes/serif.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../lib/highlight-themes/github.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '../lib/css/print/pdf.css' : '../lib/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+    <style>
+      body {
+        background: #add9e4;
+        background: -moz-radial-gradient(center, circle cover, #f7fbfc 0%, #add9e4 100%);
+        background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #f7fbfc), color-stop(100%, #add9e4));
+        background: -webkit-radial-gradient(center, circle cover, #f7fbfc 0%, #add9e4 100%);
+        background: -o-radial-gradient(center, circle cover, #f7fbfc 0%, #add9e4 100%);
+        background: -ms-radial-gradient(center, circle cover, #f7fbfc 0%, #add9e4 100%);
+        background: radial-gradient(center, circle cover, #f7fbfc 0%, #add9e4 100%);
+        background-color: #f7fbfc;
+      }
+
+      .reveal blockquote {
+        background-color: rgba(255,255,255, 0.5);
+        font-size: 80%;
+      }
+      .reveal blockquote > *:last-child:not(:first-child) {
+        font-style: normal;
+      }
+      .reveal p {
+        text-align: left;
+      }
+      .reveal h6 img {
+        border: 0 !important;
+        box-shadow: none !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <section data-markdown data-separator="^\r?\n---\r?\n$">
+            <textarea data-template>
+            # Social Robotics
+
+            ## the state of the art
+
+            ###### Jesse Clark
+            </textarea>
+          </section>
+        </section>
+        <section>
+          <section data-markdown data-separator="^\r?\n---\r?\n$">
+            <textarea data-template>
+            ## What is a social robot?
+
+            ###### ![Venn Diagram of "social creatures", "embodied robots", and "intelligent agents"](Social%20Robots%20Intersectionality.png)
+
+            At the intersection of these disciplines, we encounter new modes of interaction and unique challenges.
+
+            Note:
+
+            Intelligent agents: text-based chatbots, voice-controlled virtual assistants, software "wizards", self-checkout machines
+
+            Embodied robots: manufacturing, remote-controlled things, vending machines
+
+            Social creatures: when you interact with the above, the normal mode is not social
+            </textarea>
+          </section>
+        </section>
+        <section>
+          <h2>RoboCup</h2>
+          <section data-markdown data-separator="^\r?\n---\r?\n$">
+            <textarea data-template>
+            RoboCup is a worldwide competition for autonomous robots.
+
+            Participants are published researchers from academia and industry.
+
+            Competition drives innovation from year to year and directs attention to effective techniques.
+
+            Note:
+
+            compare to FIRST Robotics, BattleBots
+
+            ---
+
+            ### Soccer
+
+            Competing against other autonomous robots places an emphasis on speed of image processing and decision making.
+
+            - Small Size League: (wheeled) SSL-Vision system supports whole-team coordination
+
+            - Mid Size League: (wheeled) Regular size soccer ball
+
+            - Standard Platform League: SoftBank NAO (baby size humanoid)
+
+            ![NAO](NAO.jpg)
+
+            - Humanoid League: (kid size, teen size, adult size) Explore difficult mechatronics and dynamics problems
+
+            ---
+
+            ### Rescue League
+
+            - Urban search and rescue scenario (traverse difficult terrain, operate hatches and controls)
+
+            - Mix of autonomous operation and tele-operation
+
+            ---
+
+            ### RoboCup@Work
+
+            - Logistics League
+
+            ---
+
+            ### RoboCup@Home
+
+            - Domestic Standard Platform League: The RoboCup@Home Domestic Standard Platform competition uses the standard platform <a href="http://newsroom.toyota.co.jp/en/detail/8709541/" target="_blank" rel="">Toyota Human Support Robot</a> (HSR).
+
+            - Social Standard Platform: The RoboCup@Home Social Standard Platform competition uses the standard platform <span><a href="https://www.ald.softbankrobotics.com/en/cool-robots/pepper/find-out-more-about-pepper" target="_blank" rel="">Softbank Robotics Pepper</a>.<br><br></span>
+
+            - Open Platform: In the RoboCup@Home Open Platform competition every custom platform is allowed.
+            </textarea>
+          </section>
+        </section>
+        <section>
+          <h2>Standard Robot Platforms</h2>
+          <section data-markdown data-separator="^\r?\n---\r?\n$">
+            <textarea data-template>
+            Some leagues compete to *build or modify* robots, and are very focused on mechatronics and dynamics.
+
+            Other leagues use a **standard hardware platform**. All teams work with the same hardware, and compete to get the best performance without modifications.
+
+            A common approach in robotics research is to use the onboard computer as a dumb interface to the hardware, while running the main program on an auxiliary computer (e.g. nvidia Jetson or Alienware laptop). This is not allowed in **standard platform** leagues.
+
+            External computing services are allowed, but wifi connectivity is not guaranteed.
+
+            Note:
+
+            opinions differ as to weather "software modifications" are allowed
+
+            ---
+
+            Robot platforms have a long lifecycle. A platform in active production may not be compatible with current versions of network protocols and container engines. For example, Pepper's main computer runs a modified version of Linux Kernel 4.0 on a 32-bit Atom CPU. The kernel includes a binary blob from the manufacturer, which can generally only be updated when the they update the entire platform.
+
+            This means lots of compiling, linking, testing, and installing in userspace.
+            </textarea>
+          </section>
+        </section>
+        <section>
+          <h2>ROS</h2>
+          <section data-markdown data-separator="^\r?\n---\r?\n$">
+            <textarea data-template>
+            ROS (Robot Operating System) is a publish/subscribe system for networked systems of sensors, processors, and actuators. It is portable, but is generally run on Ubuntu. Support for a specific robot platform often lags behind an entire LTS version. (That is, in 2020 you would expect to run Ubuntu 2018.4, with a Linux kernel from 2015.)
+
+            ROS is the de-facto standard platform for publishing robotics research code. It is essential for making use of existing work on autonomous navigation.
+
+            ---
+
+            ROS places some constraints on network design:
+
+            - Public IP address of master node must be known before system initialization.
+
+            - Arbitrary ports must be forwardable on any node that joins the cluster.
+
+            A typical ROS system consists of a WiFi/VPN basestation, a GPU server, and one mobile robot.
+
+            </textarea>
+          </section>
+        </section>
+        <section>
+          <h2>RoboCup@Home Format</h2>
+          <section data-markdown data-separator="^\r?\n---\r?\n$">
+            <textarea data-template>
+            The RoboCup@Home competition consists of a series of challenges which are scored by human judges. These include social and domestic tasks such as:
+
+            - Set the table
+
+            - Take out the garbage
+
+            - Find a household object
+
+            - Meet and greet people, introduce them, help them find friends
+
+            - Take guests' food and drink orders
+
+            - Escort someone to their taxi
+
+            Note:
+            - Does the robot behave dynamically?
+            - No, we spend 5 weeks to script a 5-minute interaction, because we don't want anything unexpected to happen during the brief time limit.
+
+            ---
+
+            The rules of the challenges are published several weeks before the competition.
+
+            The exact layout of the arena (a mock apartment) and the exact objects to be used are not known until 24 hours before the competition.
+
+            ---
+
+            The capabilities required to complete these challenges generally include:
+
+            - Safe navigation in a domestic space (benefits from knowing the exact map)
+
+            - Perception and manipulation of household objects (benefits from knowing the exact objects)
+
+            - Perception of human voices, faces, and gestures (can mostly be prepared in advance)
+
+            </textarea>
+          </section>
+        </section>
+        <section>
+          <h2>UTS Unleashed! Strategy</h2>
+          <section data-markdown data-separator="^\r?\n---\r?\n$">
+            <textarea data-template>
+            ###### **UTS Unleashed!** team, from University of Technology Sydney  
+            ###### RoboCup@Home Social Standard Platform League  
+            ###### First place, RoboCup 2019  
+
+            ---
+
+            ### Userspace Operating System
+
+            We published [`pepper_os`](https://github.com/awesomebytes/pepper_os), a userspace operating system based on [Gentoo Prefix](https://wiki.gentoo.org/wiki/Project:Prefix). It uses a continuous integration system to compile current ROS dependencies for Pepper's CPU and kernel, and package them as a tarball that can be deployed without root access.
+
+            This lets us run mature ROS packages on the onboard computer.
+
+            ---
+
+            ### Fault-tolerant Architecture
+
+            - High-quality networked services (Tensorflow on local server, Google Cloud Speech to Text, Amazon Transcribe and Azure Facial Recognition API were considered)
+
+            - Onboard fallbacks for all services in case of network problems
+
+            - We created the "Magic ROS" system for automatically selecting the best option among simultaneous services
+
+            - Each service reports its status in a diagnostics system that can be used as a "pre-flight checklist"
+
+            ---
+
+            ### Real-Time Appearance-Based Mapping
+
+            Almost all challenges involve navigation, and a single collision with an obstacle is disqualifying.
+
+            Pepper includes laser range sensors around its base, for obstacle detection. Early work with this platform tried to use these lasers for Simultaneous Localization and Mapping (SLAM), but they are much lower resolution than what is normally used on research robots.
+
+            Using camera images to localize in 3D space is more CPU-intensive, but much more accurate.
+
+            Note:
+
+            Cute hack: we use the `SIGSTOP` and `SIGCONT` Linux IPC signals to pause the CPU usage when localization is not needed.
+
+            ---
+
+            ### Operational Readiness Tests
+
+            Over the course of 12 weeks leading up to the competition, we 
+
+            ---
+
+            ### On-site Transfer Learning
+
+            The general requirements for object perception are known in advance, but we want to optimize a neural net for the specific objects used in competition.
+
+            Note:
+
+            For example, if you think you see
+
+            </textarea>
+          </section>
+        </section>
+        <section>
+          <section data-markdown data-separator="^\r?\n---\r?\n$">
+            <textarea data-template>
+            ## References
+
+            [UTS Unleashed! Team Description Paper PDF](UTS%20Unleashed%202019%20RoboCup%20SSPL%20TDP.pdf)  
+            [UTS Unleashed! Champions Paper PDF](UTS_Unleashed__Champions_paper_final.pdf)  
+            [UTS Unleashed! 2019 Poster PDF](RoboCup2019-Poster.pdf)  
+            [UTS Unleashed! 2018 Poster PDF](Robocup%202018%20Poster.pdf)
+            </textarea>
+          </section>
+        </section>
+      </div>
+    </div>
+
+    <script src="../lib/js/reveal.js"></script>
+
+    <script>
+      // More info about config & dependencies:
+      // - https://github.com/hakimel/reveal.js#configuration
+      // - https://github.com/hakimel/reveal.js#dependencies
+      Reveal.initialize({
+        width: 1440,
+        height: 900,
+        margin: 0.05,
+        controls: (document.location.protocol != 'file:'),
+        controlsTutorial: true,
+        progress: false,
+        slideNumber: "c/t",
+        showNotes: false,
+        hash: true,
+        history: true,
+        fragments: true,
+        fragmentInURL: true,
+        pdfSeparateFragments: false,
+        markdown: {
+          smartypants: true
+        },
+        dependencies: [
+          { src: '../lib/reveal-plugins/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: '../lib/reveal-plugins/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: '../lib/reveal-plugins/notes/notes.js', async: true },
+          { src: '../lib/reveal-plugins/highlight/highlight.js', async: true },
+          { src: '../lib/reveal-plugins/search/search.js', async: true}
+        ]
+      });
+    </script>
+  </body>
+</html>
