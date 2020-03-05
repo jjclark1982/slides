@@ -107,15 +107,19 @@
 
             - Small Size League: (wheeled) SSL-Vision system supports whole-team coordination
 
-            - Mid Size League: (wheeled) Regular size soccer ball
+            - Mid Size League: (wheeled) Uses a regular size soccer ball
 
             - Standard Platform League: (baby size humanoid) SoftBank NAO 
 
-            - Humanoid League: (kid size, teen size, adult size) Explore difficult mechatronics and dynamics problems
+            - Humanoid League: (kid size, teen size, adult size) Explore difficult mechatronics problems
 
             <!-- .element: style="font-size: 80%" -->
 
-            # ![SoftBank NAO Robot](NAO.jpg)
+            <h1 style="margin-top:-20px"><img src="NAO.jpg" height="400"></h1>
+
+            Note:
+
+            UTS Unleashed competed in the NAO league years ago, and developed a novel attention architecture for dynamic behavior
 
             ---
 
@@ -129,7 +133,7 @@
 
             ### RoboCup@Work
 
-            Warehouse logistics, pathfinding and manipulation in a controlled environment
+            ###### Warehouse logistics, pathfinding and manipulation in a controlled environment
 
             # <img src="logistics-league.jpg" height=600>
 
@@ -137,13 +141,17 @@
 
             ### RoboCup@Home
 
-            - Domestic Standard Platform League: The RoboCup@Home Domestic Standard Platform competition uses the standard platform <a href="http://newsroom.toyota.co.jp/en/detail/8709541/" target="_blank">Toyota Human Support Robot</a> (HSR).
+            - Domestic Standard Platform League: The <a href="http://newsroom.toyota.co.jp/en/detail/8709541/" target="_blank">Toyota Human Support Robot</a> (HSR) has good sensors for safe locomotion, and a good gripper for manipulation.  
+            <img src="HSR.jpg" width=650> <img src="Pepper.jpg" width=650>
 
-            - Social Standard Platform: The RoboCup@Home Social Standard Platform competition uses the standard platform <span><a href="https://www.ald.softbankrobotics.com/en/cool-robots/pepper/find-out-more-about-pepper" target="_blank">Softbank Robotics Pepper</a>.
+            - Social Standard Platform League: <span><a href="https://www.ald.softbankrobotics.com/en/cool-robots/pepper/find-out-more-about-pepper" target="_blank">Softbank Robotics Pepper</a> has a friendly face, a large tablet display, and touch sensors on its hands and head.
 
-            - Open Platform: In the RoboCup@Home Open Platform competition every custom platform is allowed.
+            ---
 
-            # ![SoftBank Pepper Robot](Pepper.jpg) ![Toyota HSR Robot](HSR.jpg)
+            ### RoboCup@Home
+
+            - Open Platform League: Every custom platform is allowed.  
+            <img src="athome-open-league.jpg" width=650> <img src="athome-open-league-2.jpg" width=650>
             </textarea>
           </section>
         </section>
@@ -211,7 +219,7 @@
 
             - Meet and greet people, introduce them, help them find friends
 
-            - Take guests' food and drink orders
+            - Take guests' food and drink orders, carry trays
 
             - Escort someone to their taxi
 
@@ -256,6 +264,14 @@
 
             ---
 
+            ### Operational Readiness Tests
+
+            Over the course of the semester leading up to the competition, we rehearsed challenges on a regular basis, including moving the entire operation off-site.
+
+            We prioritized getting scores above 0 for each challenge, and worked on adding robustness to the "path to the first point."
+
+            ---
+
             ### Userspace Operating System
 
             We published [`pepper_os`](https://github.com/awesomebytes/pepper_os), a userspace operating system based on [Gentoo Prefix](https://wiki.gentoo.org/wiki/Project:Prefix). It uses a continuous integration system to compile current ROS dependencies for Pepper's CPU and kernel, and package them as a tarball that can be deployed without root access.
@@ -286,13 +302,7 @@
 
             Note:
 
-            Cute hack: we use the `SIGSTOP` and `SIGCONT` Linux IPC signals to pause the CPU usage when localization is not needed.
-
-            ---
-
-            ### Operational Readiness Tests
-
-            Over the course of 12 weeks leading up to the competition, we rehearsed challenges on a regular basis, including rehearsals where key 
+            Cute hack: we use the `SIGSTOP` and `SIGCONT` Linux IPC signals to pause CPU usage when localization is not needed.
 
             ---
 
@@ -300,10 +310,11 @@
 
             The general requirements for object perception are known in advance, but we want to optimize a neural net for the specific objects used in competition.
 
+            We used a pretrained network based on YOLO ("You Only Look Once") with depth support. We re-trained the top layer to recognize only competition objects, using images from the robot's camera. It takes a few hours to capture and label video of all the objects, then it can train overnight.
+
             Note:
 
-            For example, if you think you see
-
+            For example, if the robot thinks it sees an object that is not part of the competition, it has wasted its time. But if it mistakenly sees one valid object as a different valid object, that can lead toward a productive interaction.
             </textarea>
           </section>
         </section>
