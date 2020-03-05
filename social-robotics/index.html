@@ -67,10 +67,9 @@
           </section>
         </section>
         <section>
+          <h2>What is a social robot?</h2>
           <section data-markdown data-separator="^\r?\n---\r?\n$">
             <textarea data-template>
-            ## What is a social robot?
-
             ###### ![Venn Diagram of "social creatures", "embodied robots", and "intelligent agents"](Social%20Robots%20Intersectionality.png)
 
             At the intersection of these disciplines, we encounter new modes of interaction and unique challenges.
@@ -131,15 +130,17 @@
 
             ---
 
-            ### RoboCup@Work
+            ### @Work
 
-            ###### Warehouse logistics, pathfinding and manipulation in a controlled environment
+            ###### Logistics League: pathfinding and manipulation in a mock warehouse
 
             # <img src="logistics-league.jpg" height=600>
 
             ---
 
-            ### RoboCup@Home
+            ### @Home
+
+            ###### Household tasks in a mock apartment
 
             - Domestic Standard Platform League: The <a href="http://newsroom.toyota.co.jp/en/detail/8709541/" target="_blank">Toyota Human Support Robot</a> (HSR) has good sensors for safe locomotion, and a good gripper for manipulation.  
             <img src="HSR.jpg" width=650> <img src="Pepper.jpg" width=650>
@@ -148,7 +149,7 @@
 
             ---
 
-            ### RoboCup@Home
+            ### @Home
 
             - Open Platform League: Every custom platform is allowed.  
             <img src="athome-open-league.jpg" width=650> <img src="athome-open-league-2.jpg" width=650>
@@ -163,7 +164,7 @@
 
             Other leagues use a **standard hardware platform**. All teams work with the same hardware, and compete to get the best performance without modifications.
 
-            A common approach in robotics research is to use the onboard computer as a dumb interface to the hardware, while running the main program on an auxiliary computer (e.g. nvidia Jetson or Alienware laptop). This is not allowed in **standard platform** leagues.
+            A common approach in robotics research is to use the onboard computer as a dumb interface to the hardware, while running the main program on an auxiliary computer (such as nvidia Jetson or an Alienware laptop). This is not allowed in **standard platform** leagues.
 
             External computing services are allowed, but wifi connectivity is not guaranteed.
 
@@ -197,6 +198,9 @@
 
             A typical ROS system consists of a WiFi/VPN basestation, a GPU server, and one mobile robot.
 
+            Note:
+
+            If we want to run a ROS node in a Docker container, we would need to limit the ports ROS can choose from and open them in Docker in advance. Or join a VPN, or multiple VPNs for multiple robots.
             </textarea>
           </section>
         </section>
