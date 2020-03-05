@@ -177,6 +177,11 @@
             Robot platforms have a long lifecycle. A platform in active production may not be compatible with current versions of network protocols and container engines. For example, Pepper's main computer runs a modified version of Linux Kernel 4.0 on a 32-bit Atom CPU. The kernel includes a binary blob from the manufacturer, which can generally only be updated when the they update the entire platform.
 
             This means lots of compiling, linking, testing, and installing in userspace.
+
+            ---
+
+            ###### ![SoftBank Robotics Pepper](Pepper-cutout.png)
+            ###### SoftBank Robotics Pepper
             </textarea>
           </section>
         </section>
@@ -272,7 +277,13 @@
 
             Over the course of the semester leading up to the competition, we rehearsed challenges on a regular basis, including moving the entire operation off-site.
 
+            At some tests we forced key personnel to be absent.
+
             We prioritized getting scores above 0 for each challenge, and worked on adding robustness to the "path to the first point."
+
+            Note:
+
+            To facilitate moving off-site for tests and for the eventual competition, we set up a portable on-premises continuous integration system ([GitLab Runner](https://docs.gitlab.com/runner/)) and Pip and Debian package servers.
 
             ---
 
@@ -302,7 +313,7 @@
 
             Pepper includes laser range sensors around its base, for obstacle detection. Early work with this platform tried to use these lasers for Simultaneous Localization and Mapping (SLAM), but they are much lower resolution than what is normally used on research robots.
 
-            Using RGB+depth camera images to localize in 3D space is more CPU-intensive, but much more accurate.
+            Using RGB+depth camera images to localize in 3D space is more CPU-intensive, but much more accurate. Combined with Adaptive Monte Carlo Localization (AMCL), it is able to navigate anywhere in the arena in under 1 minute.
 
             Note:
 
