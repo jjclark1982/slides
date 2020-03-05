@@ -47,6 +47,9 @@
         border: 0 !important;
         box-shadow: none !important;
       }
+      .reveal .slides > section > section.present > *:first-child {
+        padding-top: 72px;
+      }
     </style>
   </head>
   <body>
@@ -106,37 +109,41 @@
 
             - Mid Size League: (wheeled) Regular size soccer ball
 
-            - Standard Platform League: SoftBank NAO (baby size humanoid)
+            - Standard Platform League: (baby size humanoid) SoftBank NAO 
 
             - Humanoid League: (kid size, teen size, adult size) Explore difficult mechatronics and dynamics problems
 
-            ![NAO](NAO.jpg)
+            <!-- .element: style="font-size: 80%" -->
+
+            # ![SoftBank NAO Robot](NAO.jpg)
 
             ---
 
             ### Rescue League
 
-            - Urban search and rescue scenario (traverse difficult terrain, operate hatches and controls)
+            Urban search and rescue scenario (traverse difficult terrain, operate hatches and controls). Mix of autonomous operation and tele-operation.
 
-            - Mix of autonomous operation and tele-operation
+            # <img src="rescue-league.jpg" height="700px">
 
             ---
 
             ### RoboCup@Work
 
-            - Logistics League
+            Warehouse logistics, pathfinding and manipulation in a controlled environment
+
+            # <img src="logistics-league.jpg" height=600>
 
             ---
 
             ### RoboCup@Home
 
-            - Domestic Standard Platform League: The RoboCup@Home Domestic Standard Platform competition uses the standard platform <a href="http://newsroom.toyota.co.jp/en/detail/8709541/" target="_blank" rel="">Toyota Human Support Robot</a> (HSR).
+            - Domestic Standard Platform League: The RoboCup@Home Domestic Standard Platform competition uses the standard platform <a href="http://newsroom.toyota.co.jp/en/detail/8709541/" target="_blank">Toyota Human Support Robot</a> (HSR).
 
-            - Social Standard Platform: The RoboCup@Home Social Standard Platform competition uses the standard platform <span><a href="https://www.ald.softbankrobotics.com/en/cool-robots/pepper/find-out-more-about-pepper" target="_blank" rel="">Softbank Robotics Pepper</a>.<br><br></span>
+            - Social Standard Platform: The RoboCup@Home Social Standard Platform competition uses the standard platform <span><a href="https://www.ald.softbankrobotics.com/en/cool-robots/pepper/find-out-more-about-pepper" target="_blank">Softbank Robotics Pepper</a>.
 
             - Open Platform: In the RoboCup@Home Open Platform competition every custom platform is allowed.
 
-            ![Pepper](Pepper.jpg) ![HSR](HSR.jpg)
+            # ![SoftBank Pepper Robot](Pepper.jpg) ![Toyota HSR Robot](HSR.jpg)
             </textarea>
           </section>
         </section>
@@ -189,6 +196,11 @@
           <h2>RoboCup@Home Format</h2>
           <section data-markdown data-separator="^\r?\n---\r?\n$">
             <textarea data-template>
+
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/0bvCyXi7c1Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="float:right"></iframe>
+
+            <br><br>
+
             The RoboCup@Home competition consists of a series of challenges which are scored by human judges. These include social and domestic tasks such as:
 
             - Set the table
@@ -202,6 +214,9 @@
             - Take guests' food and drink orders
 
             - Escort someone to their taxi
+
+            <!-- .element: style="float: left" -->
+
 
             Note:
             - Does the robot behave dynamically?
@@ -217,11 +232,14 @@
 
             The capabilities required to complete these challenges generally include:
 
-            - Safe navigation in a domestic space (benefits from knowing the exact map)
+            - Safe navigation in a domestic space  
+            (benefits from knowing the exact map)
 
-            - Perception and manipulation of household objects (benefits from knowing the exact objects)
+            - Perception and manipulation of household objects  
+            (benefits from knowing the exact objects)
 
-            - Perception of human voices, faces, and gestures (can mostly be prepared in advance)
+            - Perception of human voices, faces, and gestures  
+            (can mostly be prepared in advance)
 
             </textarea>
           </section>
@@ -233,6 +251,8 @@
             ###### **UTS Unleashed!** team, from University of Technology Sydney  
             ###### RoboCup@Home Social Standard Platform League  
             ###### First place, RoboCup 2019  
+
+            # <img src="UTS-Unleashed.jpg" height="700px">
 
             ---
 
@@ -262,7 +282,7 @@
 
             Pepper includes laser range sensors around its base, for obstacle detection. Early work with this platform tried to use these lasers for Simultaneous Localization and Mapping (SLAM), but they are much lower resolution than what is normally used on research robots.
 
-            Using camera images to localize in 3D space is more CPU-intensive, but much more accurate.
+            Using RGB+depth camera images to localize in 3D space is more CPU-intensive, but much more accurate.
 
             Note:
 
@@ -272,7 +292,7 @@
 
             ### Operational Readiness Tests
 
-            Over the course of 12 weeks leading up to the competition, we 
+            Over the course of 12 weeks leading up to the competition, we rehearsed challenges on a regular basis, including rehearsals where key 
 
             ---
 
