@@ -1,110 +1,251 @@
 <!doctype html>
-<html>
+<html lang="en">
+
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <title>Nanopore Sequencing</title>
 
-    <link rel="stylesheet" href="../lib/css/reset.css">
-    <link rel="stylesheet" href="../lib/css/reveal.css">
-    <link rel="stylesheet" href="../lib/reveal-themes/serif.css">
-
-    <!-- Theme used for syntax highlighting of code -->
-    <link rel="stylesheet" href="../lib/highlight-themes/github.css">
-
-    <!-- Printing and PDF exports -->
-    <script>
-      var link = document.createElement( 'link' );
-      link.rel = 'stylesheet';
-      link.type = 'text/css';
-      link.href = window.location.search.match( /print-pdf/gi ) ? '../lib/css/print/pdf.css' : '../lib/css/print/paper.css';
-      document.getElementsByTagName( 'head' )[0].appendChild( link );
-    </script>
+    <link rel="stylesheet" href="../lib/reveal-4.4.0/reveal.css">
+    <link rel="stylesheet" href="../lib/reveal-4.4.0/theme/serif.css" id="theme">
+    <link rel="stylesheet" href="../lib/highlight-themes/solarized-light.css">
     <style>
-      body {
-        background: #add9e4;
-        background: -moz-radial-gradient(center, circle cover, #f7fbfc 0%, #add9e4 100%);
-        background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #f7fbfc), color-stop(100%, #add9e4));
-        background: -webkit-radial-gradient(center, circle cover, #f7fbfc 0%, #add9e4 100%);
-        background: -o-radial-gradient(center, circle cover, #f7fbfc 0%, #add9e4 100%);
-        background: -ms-radial-gradient(center, circle cover, #f7fbfc 0%, #add9e4 100%);
-        background: radial-gradient(center, circle cover, #f7fbfc 0%, #add9e4 100%);
-        background-color: #f7fbfc;
-      }
-
-      .reveal blockquote {
-        background-color: rgba(255,255,255, 0.5);
-        font-size: 80%;
-      }
-      .reveal blockquote > *:last-child:not(:first-child) {
-        font-style: normal;
-      }
       .reveal p {
         text-align: left;
       }
-      .reveal h6 img {
-        border: 0 !important;
-        box-shadow: none !important;
+      .reveal ul {
+        display: block;
       }
-      .reveal .slides > section > section.present > *:first-child {
-        padding-top: 72px;
-      }
-      .reveal section img {
-        background: transparent;
+      .figure-right {
+        float: right;
+        margin: 0 0 0 1em;
       }
     </style>
   </head>
+
   <body>
+
     <div class="reveal">
+
       <div class="slides">
-        <section>
-          <section data-markdown data-separator="^\r?\n---\r?\n$">
-            <textarea data-template>
+
+        <section data-markdown>
+          <textarea data-template>
             ## Nanopore DNA Sequencing
 
-            ### Primary analysis of single-molecule sensor data
+            #### Primary analysis of single-molecule sensor data
+
+            <br><br>
 
             ###### Jesse Clark
 
             <img src="Roche-logo.svg" class="plain" style="height: 2em"/>
+
+            Notes:
+            Hello. I'm a software engineer at Roche Diagnostics. I'd like to tell you about the work I've been doing on our nanopore sequencing instrument.
+          </textarea>
+        </section>
+
+        <section>
+          <h3>1<sup>st</sup> Generation Sequencing</h3>
+          <section data-markdown>
+            <textarea data-template>
+              ### Gel Electrophoresis
+
+              [Phoresis](https://en.wikipedia.org/wiki/Gel_electrophoresis) is a technique for separating molecules by size.
+              It was first used for DNA sequencing in 1977.
+
+              <figure class="figure-right">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/74/Gel_Electrophoresis.svg" style="width:50%" />
+              </figure>
+
+              - Cut DNA strands into all possible fragments  
+              ("sequencing by ligation")
+              - Attach base-dependent fluorescence to the end of each fragment  
+              ("chain termination method")
+              - Separate fragments by size
+
+              Notes:
+              First, some background. Historically, sequencing has used chemical techniques to work with DNA samples that are large enough to detect by fluorescence.
+
+              ---
+
+              ### Polymerase Chain Reaction (PCR)
+
+              The [Polymerase Chain Reaction](https://en.wikipedia.org/wiki/Polymerase_chain_reaction) was invented in 1985.
+
+              It amplifies a sample of DNA by making copies of copies.
+              This makes it possible to read longer sequences with electrophoresis.
+
+              But it introduces noise dependent on earlier noise, so more [depth of coverage](https://en.wikipedia.org/wiki/Coverage_(genetics)) is required to reach a desired quality level.
+
+              Notes:
+              Roche is doing interesting work with neural network early interpretation of PCR curves. Faster turnaround time can open new markets.
+
+              ---
+
+              [The Human Genome Project](https://www.genome.gov/human-genome-project)
+              used this technology to sequence the human genome (3.1 billion base pairs) from 1990 to 2003.
+
+              <img src="https://www.genome.gov/sites/default/files/inline-images/2021_Sequencing_cost_per_Human_Genome.jpg" style="float: right;width: 50%"/>
+
+              Since then, advancing technology  
+              has dramatically improved cost-effectiveness:
+              - massively parallel instruments
+              - sequencing by synthesis
+              - synchronized reagent wash
+              - real-time optical detection
+            </textarea>
+          </section>
+        </section>
+
+        <section>
+          <h3>Nanopore Sequencing</h3>
+          <section data-markdown>
+            <textarea data-template>
+              <figure class="figure-right">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Single_channel.png">
+                <figcaption><small><i>Voltage across a single ion channel</i></small></figcaption>
+              </figure>
+
+              The [patch clamp](https://en.wikipedia.org/wiki/Patch_clamp) eletcrophysiology technique is used to measure voltage or current flow through a single ion channel.
+
+              [Nanopore sequencing](https://en.wikipedia.org/wiki/Nanopore_sequencing) is based on threading a single strand of DNA through an ion channel and measuring the characteristic voltage signature of each nucleotide.
+
+              This technique is sensitive enough to measure single molecules of native DNA without reaction synchronization or repeated replication. (Data scientists can correlate non-synchronized data during analysis.)
+
+              ---
+
+              <figure class="figure-right">
+                <img src="oxford-nanopore-2009.jpg" style="height: 10em" />
+                <figcaption><small><i>Oxford Nanopore (2009)</i></small></figcaption>
+              </figure>
+
+              - Create a membrane with a single pore.  
+              Pore-forming toxins such as α-hemolysin can be produced by bacteria for this purpose.
+
+              - Attach a DNA-threading enzyme to the pore.
+
+              - Measure voltage across the pore as the DNA passes through it.
+
+              <br style="clear:right">
+
+              Biochemical engineers can modify nucleotides to make their electric signatures more distinct ("sequencing by synthesis").
+
+              ---
+
+              ### Roche High-Throughput Platform
+
+              <figure class="figure-right">
+                <img src="roche-cobas-6800-product-shot.png" style="width:20em" />
+              </figure>
+
+              - Custom chip with 8,000,000 single-pore wells and a general purpose rolling-shutter sensor  
+              (Genia Technologies)
+
+              - Engineered nucleotides with a ratcheting effect that helps control procession rate  
+              (Stratos Genomics)
+
+            </textarea>
+          </section>
+        </section>
+
+        <section>
+          <h3>Primary Data Analysis</h3>
+          <section data-markdown>
+            <textarea data-template>
+              Primary analysis of sequencing data needs to produce:
+              - sequence of DNA base-calls
+              - quality-control metrics
+              - genome alignment (if applicable)
+
+              These can then be passed into later analysis stages such as mutation calling.
+
+              Notes:
+              Here is how we handle primary data analysis at Roche.
+
+              ---
+
+              - Experiment metadata (chemical reagents, electric waveforms, relevant genome, ...) is specified in advance. Voltage data is collected as "frames" which consist of millions of 8-bit voltage readings, plus some "frame header" metadata.
+
+              - Data is transposed from frame-major order into cell-major order, so that the complete record of a single cell is available in a single data chunk. These chunks are copied to cloud storage and tracked with an in-house database.
+
+              - Data in the cloud is analyzed on-demand by a docker image (with versions, branches, parameters, ...). Data chunks are analyzed in parallel and then the results are merged. Results include essential base-call information as well as extra information for algorithm development and tuning.
+
+              - Analysis results are used to train a neural network to perform base-calls in real time on the production instrument.
+
+
+              Notes:
+              - Data in the cloud can be viewed with an in-house data visualization tool.
+
+              - random subsampling
+
+              - frame header array-phases
+
+              ---
+
+              ### Algorithms
+
+              - Dysfunctional state detection (including valid pore lifetime)
+
+              - Voltage normalization (open-channel voltage drifts over time)
+
+              - Molecular trace detection
+
+              - Level-calling
+
+              - Base-calling
+
+              - Genome alignment
+
+              - Quality metrics (read length statistics, confidence of each base-call, ...)
+
             </textarea>
           </section>
         </section>
       </div>
     </div>
 
-    <script src="../lib/js/reveal.js"></script>
-
+    <script src="../lib/reveal-4.4.0/reveal.js"></script>
+        <script src="../lib/reveal-plugin/markdown/markdown.js"></script>
+        <script src="../lib/reveal-plugin/highlight/highlight.js"></script>
+        <script src="../lib/reveal-plugin/notes/notes.js"></script>
+        <script src="../lib/reveal-plugin/math/math.js"></script>
+        <script src="../lib/reveal-plugin/search/search.js"></script>
     <script>
-      // More info about config & dependencies:
-      // - https://github.com/hakimel/reveal.js#configuration
-      // - https://github.com/hakimel/reveal.js#dependencies
+
       Reveal.initialize({
         width: 1440,
         height: 900,
         margin: 0.05,
         controls: (document.location.protocol != 'file:'),
-        controlsTutorial: true,
+        controlsTutorial: false,
         progress: false,
         slideNumber: "c/t",
+        hashOneBasedIndex: true,
         showNotes: false,
         hash: true,
         history: true,
-        fragments: true,
-        fragmentInURL: true,
+        center: true,
+        navigationMode: "default",
+
         pdfSeparateFragments: false,
         markdown: {
           smartypants: true
         },
-        dependencies: [
-          { src: '../lib/reveal-plugins/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-          { src: '../lib/reveal-plugins/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-          { src: '../lib/reveal-plugins/notes/notes.js', async: true },
-          { src: '../lib/reveal-plugins/highlight/highlight.js', async: true },
-          { src: '../lib/reveal-plugins/search/search.js', async: true}
+        katex: {
+          local: '../lib/katex-0.16.4'
+        },
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealNotes,
+          RevealMath.KaTeX,
+          RevealSearch
         ]
       });
+
     </script>
+
   </body>
 </html>
