@@ -47,7 +47,7 @@
         </section>
 
         <section>
-          <h3>1<sup>st</sup> Generation Sequencing</h3>
+          <h3>First-Generation Sequencing</h3>
           <section data-markdown>
             <textarea data-template>
               ### Gel Electrophoresis
@@ -170,7 +170,7 @@
 
               - Data is transposed from frame-major order into cell-major order, so that the complete record of a single cell is available in a single data chunk. These chunks are copied to cloud storage and tracked with an in-house database.
 
-              - Data in the cloud is analyzed on-demand by a docker image (with versions, branches, parameters, ...). Data chunks are analyzed in parallel and then the results are merged. Results include essential base-call information as well as extra information for algorithm development and tuning.
+              - Data in the cloud is analyzed on-demand by a Docker image (with versions, branches, parameters, ...). Data chunks are analyzed in parallel and then the results are merged. Results include essential base-call information as well as extra information for algorithm development and tuning.
 
               - Analysis results are used to train a neural network to perform base-calls in real time on the production instrument.
 
@@ -181,6 +181,8 @@
               - random subsampling
 
               - frame header array-phases
+
+              - neural network model categorization
 
               ---
 
@@ -203,15 +205,27 @@
             </textarea>
           </section>
         </section>
+        <section data-markdown>
+          <textarea data-template>
+            <img src="Roche-logo.svg" class="plain" style="height: 2em"/>
+
+            #### Doing now what patients need next
+
+            <br><br>
+
+            ##### Jesse Clark
+            ###### `jesse@modusponens.org`
+          </textarea>
+        </section>
       </div>
     </div>
 
     <script src="../lib/reveal-4.4.0/reveal.js"></script>
-        <script src="../lib/reveal-plugin/markdown/markdown.js"></script>
-        <script src="../lib/reveal-plugin/highlight/highlight.js"></script>
-        <script src="../lib/reveal-plugin/notes/notes.js"></script>
-        <script src="../lib/reveal-plugin/math/math.js"></script>
-        <script src="../lib/reveal-plugin/search/search.js"></script>
+    <script src="../lib/reveal-plugin/markdown/markdown.js"></script>
+    <script src="../lib/reveal-plugin/highlight/highlight.js"></script>
+    <script src="../lib/reveal-plugin/notes/notes.js"></script>
+    <script src="../lib/reveal-plugin/math/math.js"></script>
+    <script src="../lib/reveal-plugin/search/search.js"></script>
     <script>
 
       Reveal.initialize({
@@ -228,7 +242,6 @@
         history: true,
         center: true,
         navigationMode: "default",
-
         pdfSeparateFragments: false,
         markdown: {
           smartypants: true
