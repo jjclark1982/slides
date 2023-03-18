@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Nanopore Sequencing</title>
+
+    <link rel="stylesheet" href="../lib/css/reset.css">
+    <link rel="stylesheet" href="../lib/css/reveal.css">
+    <link rel="stylesheet" href="../lib/reveal-themes/serif.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../lib/highlight-themes/github.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '../lib/css/print/pdf.css' : '../lib/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+    <style>
+      body {
+        background: #add9e4;
+        background: -moz-radial-gradient(center, circle cover, #f7fbfc 0%, #add9e4 100%);
+        background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #f7fbfc), color-stop(100%, #add9e4));
+        background: -webkit-radial-gradient(center, circle cover, #f7fbfc 0%, #add9e4 100%);
+        background: -o-radial-gradient(center, circle cover, #f7fbfc 0%, #add9e4 100%);
+        background: -ms-radial-gradient(center, circle cover, #f7fbfc 0%, #add9e4 100%);
+        background: radial-gradient(center, circle cover, #f7fbfc 0%, #add9e4 100%);
+        background-color: #f7fbfc;
+      }
+
+      .reveal blockquote {
+        background-color: rgba(255,255,255, 0.5);
+        font-size: 80%;
+      }
+      .reveal blockquote > *:last-child:not(:first-child) {
+        font-style: normal;
+      }
+      .reveal p {
+        text-align: left;
+      }
+      .reveal h6 img {
+        border: 0 !important;
+        box-shadow: none !important;
+      }
+      .reveal .slides > section > section.present > *:first-child {
+        padding-top: 72px;
+      }
+      .reveal section img {
+        background: transparent;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <section data-markdown data-separator="^\r?\n---\r?\n$">
+            <textarea data-template>
+            ## Nanopore DNA Sequencing
+
+            ### Primary analysis of single-molecule sensor data
+
+            ###### Jesse Clark
+
+            <img src="Roche-logo.svg" class="plain" style="height: 2em"/>
+            </textarea>
+          </section>
+        </section>
+      </div>
+    </div>
+
+    <script src="../lib/js/reveal.js"></script>
+
+    <script>
+      // More info about config & dependencies:
+      // - https://github.com/hakimel/reveal.js#configuration
+      // - https://github.com/hakimel/reveal.js#dependencies
+      Reveal.initialize({
+        width: 1440,
+        height: 900,
+        margin: 0.05,
+        controls: (document.location.protocol != 'file:'),
+        controlsTutorial: true,
+        progress: false,
+        slideNumber: "c/t",
+        showNotes: false,
+        hash: true,
+        history: true,
+        fragments: true,
+        fragmentInURL: true,
+        pdfSeparateFragments: false,
+        markdown: {
+          smartypants: true
+        },
+        dependencies: [
+          { src: '../lib/reveal-plugins/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: '../lib/reveal-plugins/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: '../lib/reveal-plugins/notes/notes.js', async: true },
+          { src: '../lib/reveal-plugins/highlight/highlight.js', async: true },
+          { src: '../lib/reveal-plugins/search/search.js', async: true}
+        ]
+      });
+    </script>
+  </body>
+</html>
