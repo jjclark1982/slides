@@ -98,7 +98,7 @@
     var link = document.createElement( 'link' );
     link.rel = 'stylesheet';
     link.type = 'text/css';
-    link.href = '../lib/css/print.css';
+    link.href = '../lib/reveal-3.8.0/css/print.css';
     document.getElementsByTagName( 'head' )[0].appendChild( link );
   }
 </script>
@@ -419,11 +419,11 @@ This liability can grow exponentially if code paths depend on shared mutable sta
         SLConfig.theme = {"id":1455,"created_at":"2017-03-19T06:22:49.944Z","updated_at":"2017-03-19T08:37:19.573Z","name":"FEIT Presentation","thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/9d02f9c316d4e05b2db588cd59fa23b9/thumb.jpg","sanitize_messages":null,"slide_template_ids":[],"font_typekit":"","font_google":"","width":960,"height":720};
 
       // Use local fonts
-      SLConfig.fonts_url = '../lib/fonts/';
+      SLConfig.fonts_url = '../lib/reveal-3.8.0/fonts/';
     </script>
 
-    <script src="../lib/js/head.min.js"></script>
-    <script src="../lib/js/reveal.js"></script>
+    <script src="../lib/reveal-3.8.0/js/head.min.js"></script>
+    <script src="../lib/reveal-3.8.0/js/reveal.js"></script>
 
     <!-- Initialize the presentation -->
     <script>
@@ -457,10 +457,10 @@ This liability can grow exponentially if code paths depend on shared mutable sta
         },
 
         dependencies: [
-          { src: '../lib/reveal-plugins/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-          { src: '../lib/reveal-plugins/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-          { src: '../lib/reveal-plugins/highlight/highlight.js', async: true, callback: function() { hljs.initHighlighting(); hljs.initHighlightingOnLoad(); } },
-          { src: '../lib/reveal-plugins/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+          { src: '../lib/reveal-3.8.0/reveal-plugins/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: '../lib/reveal-3.8.0/reveal-plugins/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: '../lib/reveal-3.8.0/reveal-plugins/highlight/highlight.js', async: true, callback: function() { hljs.initHighlighting(); hljs.initHighlightingOnLoad(); } },
+          { src: '../lib/reveal-3.8.0/reveal-plugins/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
         ]
       });
     </script>
