@@ -20,6 +20,9 @@
         float: right;
         margin: 0 0 0 1em;
       }
+      .reveal.overview .slides > section > section {
+        padding-top: 2em;
+      }
     </style>
   </head>
 
@@ -38,11 +41,16 @@
             <br><br>
 
             ###### Jesse Clark
-
-            <img src="Roche-logo.svg" class="plain" style="height: 2em"/>
+            ###### 2023
 
             Notes:
             Hello. I'm a software engineer at Roche Diagnostics. I'd like to tell you about the work I've been doing on our nanopore sequencing instrument.
+
+            First, some background about sequencing
+
+            Second, overview of nanopore teceh
+
+            Third, how the data science depart operates at Roche
           </textarea>
         </section>
 
@@ -55,8 +63,8 @@
               [Phoresis](https://en.wikipedia.org/wiki/Gel_electrophoresis) is a technique for separating molecules by size.
               It was first used for DNA sequencing in 1977.
 
-              <figure class="figure-right">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/7/74/Gel_Electrophoresis.svg" style="width:50%" />
+              <figure class="figure-right" style="width:50%">
+                <img src="Gel_Electrophoresis.svg" />
               </figure>
 
               - Cut DNA strands into all possible fragments  
@@ -146,6 +154,8 @@
               - Engineered nucleotides with a ratcheting effect that helps control procession rate  
               (Stratos Genomics)
 
+              Notes:
+              SBX makes it much easier to detect and prevent insertions and deletions, giving us a very high accuracy with fewer samples per base dwell.
             </textarea>
           </section>
         </section>
@@ -154,35 +164,34 @@
           <h3>Primary Data Analysis</h3>
           <section data-markdown>
             <textarea data-template>
-              Primary analysis of sequencing data needs to produce:
+              Primary analysis of sequencing data produces:
               - sequence of DNA base-calls
               - quality-control metrics
               - genome alignment (if applicable)
 
               These can then be passed into later analysis stages such as mutation calling.
 
+              <br>
+
+              **Algorithms need to be adapted to the specific chemistry they are working with.**
+
               Notes:
               Here is how we handle primary data analysis at Roche.
 
               ---
 
+              <img src="Primary Data Analysis.svg">
+
+              Notes:
               - Experiment metadata (chemical reagents, electric waveforms, relevant genome, ...) is specified in advance. Voltage data is collected as "frames" which consist of millions of 8-bit voltage readings, plus some "frame header" metadata.
 
-              - Data is transposed from frame-major order into cell-major order, so that the complete record of a single cell is available in a single data chunk. These chunks are copied to cloud storage and tracked with an in-house database.
+              - Data is transposed from frame-major order into cell-major order, so that the complete record of a single cell is available in a single data chunk. Cells are subsampled randomly into chunks. These chunks are copied to cloud storage and tracked with an in-house database.
 
               - Data in the cloud is analyzed on-demand by a Docker image (with versions, branches, parameters, ...). Data chunks are analyzed in parallel and then the results are merged. Results include essential base-call information as well as extra information for algorithm development and tuning.
 
-              - Analysis results are used to train a neural network to perform base-calls in real time on the production instrument.
-
-
-              Notes:
               - Data in the cloud can be viewed with an in-house data visualization tool.
 
-              - random subsampling
-
-              - frame header array-phases
-
-              - neural network model categorization
+              - Analysis results are used to train a neural network to perform base-calls in real time on the production instrument.
 
               ---
 
@@ -202,6 +211,7 @@
 
               - Quality metrics (read length statistics, confidence of each base-call, ...)
 
+              - Neural network training
             </textarea>
           </section>
         </section>
@@ -242,6 +252,8 @@
         history: true,
         center: true,
         navigationMode: "default",
+        transition: "convex",
+        totalTime: 60 * 18,
         pdfSeparateFragments: false,
         markdown: {
           smartypants: true
