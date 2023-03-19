@@ -20,6 +20,9 @@
         float: right;
         margin: 0 0 0 1em;
       }
+      .figure-right > img {
+        margin: 0;
+      }
       .reveal.overview .slides > section > section {
         padding-top: 2em;
       }
@@ -55,54 +58,54 @@
         </section>
 
         <section>
-          <h3>First-Generation Sequencing</h3>
+          <h3>Conventional Sequencing</h3>
           <section data-markdown>
             <textarea data-template>
-              ### Gel Electrophoresis
-
-              [Phoresis](https://en.wikipedia.org/wiki/Gel_electrophoresis) is a technique for separating molecules by size.
-              It was first used for DNA sequencing in 1977.
-
               <figure class="figure-right" style="width:50%">
-                <img src="Gel_Electrophoresis.svg" />
+                <img src="https://www.genome.gov/sites/default/files/inline-images/2021_Sequencing_cost_per_Human_Genome.jpg"/>
               </figure>
 
-              - Cut DNA strands into all possible fragments  
-              ("sequencing by ligation")
-              - Attach base-dependent fluorescence to the end of each fragment  
-              ("chain termination method")
-              - Separate fragments by size
+              [The Human Genome Project](https://www.genome.gov/human-genome-project)
+              first sequenced the human genome  
+              (3.1 billion base pairs) in 2003.
+
+              Since then, we have seen three distinct generations of sequencing technology, characterized by higher signal-to-noise ratio and lower costs.
 
               Notes:
-              First, some background. Historically, sequencing has used chemical techniques to work with DNA samples that are large enough to detect by fluorescence.
+              Incremental improvements due to massively parallel instruments, streamlined processes such as "click chemistry".
+
+              Breakthroughs due to new techniques.
 
               ---
 
-              ### Polymerase Chain Reaction (PCR)
+              ### Sequencing by Ligation
 
-              The [Polymerase Chain Reaction](https://en.wikipedia.org/wiki/Polymerase_chain_reaction) was invented in 1985.
+              <figure class="figure-right" style="width:45%">
+                <img src="Gel_Electrophoresis.svg" />
+              </figure>
 
-              It amplifies a sample of DNA by making copies of copies.
-              This makes it possible to read longer sequences with electrophoresis.
+              - Cut DNA strands into fragments  
+              - Attach base-dependent fluorescence to the end of each fragment  
+              ("chain termination method")
+              - Separate fragments by size  
+              ([Gel Electrophoresis](https://en.wikipedia.org/wiki/Gel_electrophoresis))
 
-              But it introduces noise dependent on earlier noise, so more [depth of coverage](https://en.wikipedia.org/wiki/Coverage_(genetics)) is required to reach a desired quality level.
+              Signal gets weaker at longer read lengths. The sample can be amplified with [PCR](https://en.wikipedia.org/wiki/Polymerase_chain_reaction), but that introduces noise dependent on earlier noise.
+
+              High [depth of coverage](https://en.wikipedia.org/wiki/Coverage_(genetics)) is needed to differentiate between mutations in the sample and mutations in the process, in order to reach a desired quality level.
 
               Notes:
               Roche is doing interesting work with neural network early interpretation of PCR curves. Faster turnaround time can open new markets.
 
               ---
 
-              [The Human Genome Project](https://www.genome.gov/human-genome-project)
-              used this technology to sequence the human genome (3.1 billion base pairs) from 1990 to 2003.
+              ### Sequencing by Synthesis
 
-              <img src="https://www.genome.gov/sites/default/files/inline-images/2021_Sequencing_cost_per_Human_Genome.jpg" style="float: right;width: 50%"/>
+              Synchronized reaction and detection.
 
-              Since then, advancing technology  
-              has dramatically improved cost-effectiveness:
-              - massively parallel instruments
-              - sequencing by synthesis
-              - synchronized reagent wash
-              - real-time optical detection
+              For example, engineered nucleotides that fluoresce when added to a chain.
+
+              Optical detection of fluorescence during DNA synthesis.
             </textarea>
           </section>
         </section>
@@ -145,13 +148,13 @@
               ### Roche High-Throughput Platform
 
               <figure class="figure-right">
-                <img src="roche-cobas-6800-product-shot.png" style="width:20em" />
+                <img src="roche-cobas-6800-product-shot.png" style="width:18em" />
               </figure>
 
-              - Custom chip with 8,000,000 single-pore wells and a general purpose rolling-shutter sensor  
+              - Custom chip with 8,000,000 single-pore wells and a general purpose rolling-shutter array of patch clamp sensors  
               (Genia Technologies)
 
-              - Engineered nucleotides with a ratcheting effect that helps control procession rate  
+              - Engineered nucleotides with a ratcheting effect that regulates procession rate  
               (Stratos Genomics)
 
               Notes:
@@ -217,7 +220,7 @@
         </section>
         <section data-markdown>
           <textarea data-template>
-            <img src="Roche-logo.svg" class="plain" style="height: 2em"/>
+            <img src="Roche-logo.svg" class="plain" height="75"/>
 
             #### Doing now what patients need next
 
@@ -242,6 +245,8 @@
         width: 1440,
         height: 900,
         margin: 0.05,
+        center: false,
+        disableLayout: false,
         controls: (document.location.protocol != 'file:'),
         controlsTutorial: false,
         progress: false,
@@ -251,7 +256,7 @@
         hash: true,
         history: true,
         center: true,
-        navigationMode: "default",
+        navigationMode: "linear",
         transition: "convex",
         transitionSpeed: "slow",
         totalTime: 60 * 18,
