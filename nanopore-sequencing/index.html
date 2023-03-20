@@ -38,6 +38,8 @@
 
         <section data-markdown>
           <textarea data-template>
+            <!-- .slide: data-menu-title="Introduction" -->
+
             ## Nanopore DNA Sequencing
 
             #### Primary analysis of single-molecule sensor data
@@ -45,16 +47,17 @@
             <br><br>
 
             ###### Jesse Clark
+
             ###### 2023
 
             Notes:
-            Hello. I'm a software engineer at Roche Diagnostics. I'd like to tell you about the work I've been doing on our nanopore sequencing instrument. I'm familiar with all the primary analysis algorithms and pipelines.
+            Hello. I'm a software engineer at Roche Diagnostics.
+            I'd like to tell you about the work I've been doing on our nanopore sequencing instrument.
+            I'm familiar with all the primary analysis algorithms and pipelines.
 
-            First, some background about DNA sequencing
+            First, I will give some background about DNA sequencing technologies.
 
-            Second, overview of nanopore teceh
-
-            Third, how the data science depart operates at Roche
+            Then, I will explain the algorithms involved in primary analysis of nanopore data.
           </textarea>
         </section>
 
@@ -62,7 +65,8 @@
           <h3>Conventional Sequencing</h3>
           <section data-markdown>
             <textarea data-template>
-              ### Conventional Sequencing <!-- .element: style="display:none" -->
+              <!-- .slide: data-menu-title="Conventional Sequencing" -->
+
               <figure class="figure-right" style="width:50%">
                 <img src="2021_Sequencing_cost_per_Human_Genome.jpg"/>
               </figure>
@@ -74,9 +78,9 @@
               Since then, we have seen three distinct generations of sequencing technology, characterized by higher signal-to-noise ratio and lower costs.
 
               Notes:
-              Incremental improvements due to massively parallel instruments, streamlined processes such as "click chemistry".
+              In each generation, we see incremental improvements due to massively parallel instruments, streamlined processes such as "click chemistry".
 
-              Breakthroughs due to new techniques.
+              Breakthroughs are due to new techniques.
 
               ---
 
@@ -116,7 +120,8 @@
           <h3>Nanopore Sequencing</h3>
           <section data-markdown>
             <textarea data-template>
-              ### Nanopore Sequencing - Ion Channel <!-- .element: style="display:none" -->
+              <!-- .slide: data-menu-title="Nanopore Sequencing" -->
+
               <figure class="figure-right">
                 <img src="Single_channel.png">
                 <figcaption><small><i>Voltage across a single ion channel</i></small></figcaption>
@@ -132,8 +137,9 @@
               Data scientists can correlate non-synchronized data during analysis.
 
               ---
+  
+              ### Ion Channel Threading <!-- .element: style="display:none" -->
 
-              ### Pore Threading <!-- .element: style="display:none" -->
               <figure class="figure-right">
                 <img src="oxford-nanopore-2009.jpg" style="height: 10em" />
                 <figcaption><small><i>Oxford Nanopore (2009)</i></small></figcaption>
@@ -151,6 +157,8 @@
               Biochemical engineers can modify nucleotides to make their electric signatures more distinct ("sequencing by synthesis").
 
               ---
+
+              <!-- .slide: data-menu-title="High-Throughput Platform" -->
 
               ### Roche High-Throughput Platform
 
@@ -174,7 +182,7 @@
           <h3>Primary Data Analysis</h3>
           <section data-markdown>
             <textarea data-template>
-              ### Primary Data Analysis <!-- .element: style="display:none" -->
+              <!-- .slide: data-menu-title="Primary Data Analysis" -->
 
               Primary analysis of sequencing data produces:
               - sequence of DNA base-calls
@@ -188,7 +196,11 @@
               **Algorithms need to be adapted to the specific chemistry they are working with.**
 
               Notes:
-              Here is how we handle primary data analysis at Roche.
+              The cost of sequencing is usually dominated by hardware and reagents.
+
+              The analysis algorithms are straightforward, but they need to be adapted to the specific chemistry they are working with.
+
+              A well-run data science team should be able to make changes quickly and enable experimentalists to self-manage code versions and parameters.
 
               ---
 
@@ -197,6 +209,8 @@
               <img src="Primary Data Analysis.svg" style="width:90%" />
 
               Notes:
+              Here is how we handle primary data analysis at Roche.
+
               - Experiment metadata (chemical reagents, electric waveforms, relevant genome, ...) is specified in advance. Voltage data is collected as "frames" which consist of millions of 8-bit voltage readings, plus some "frame header" metadata.
 
               - Data is transposed from frame-major order into cell-major order, so that the complete record of a single cell is available in a single data chunk. Cells are subsampled randomly into chunks. These chunks are copied to cloud storage and tracked with an in-house database.
@@ -231,7 +245,8 @@
         </section>
         <section data-markdown>
           <textarea data-template>
-            ### Closing <!-- .element: style="display:none" -->
+            <!-- .slide: data-menu-title="Closing" -->
+
             <img src="Roche-logo.svg" class="plain" height="75"/>
 
             #### Doing now what patients need next
@@ -258,6 +273,7 @@
         width: 1440,
         height: 900,
         margin: 0.05,
+        totalTime: 60 * 20,
         center: false,
         disableLayout: false,
         controls: (document.location.protocol != 'file:'),
@@ -272,7 +288,6 @@
         navigationMode: "linear",
         transition: "convex",
         transitionSpeed: "slow",
-        totalTime: 60 * 18,
         pdfSeparateFragments: false,
         markdown: {
           smartypants: true
@@ -281,6 +296,7 @@
           local: '../lib/katex-0.16.4'
         },
         menu: {
+          sticky: false,
           numbers: false,
           transitions: true,
           loadIcons: false,
