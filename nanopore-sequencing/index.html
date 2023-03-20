@@ -62,6 +62,7 @@
           <h3>Conventional Sequencing</h3>
           <section data-markdown>
             <textarea data-template>
+              ### Conventional Sequencing <!-- .element: style="display:none" -->
               <figure class="figure-right" style="width:50%">
                 <img src="https://www.genome.gov/sites/default/files/inline-images/2021_Sequencing_cost_per_Human_Genome.jpg"/>
               </figure>
@@ -115,6 +116,7 @@
           <h3>Nanopore Sequencing</h3>
           <section data-markdown>
             <textarea data-template>
+              ### Nanopore Sequencing - Ion Channel <!-- .element: style="display:none" -->
               <figure class="figure-right">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Single_channel.png">
                 <figcaption><small><i>Voltage across a single ion channel</i></small></figcaption>
@@ -124,10 +126,14 @@
 
               [Nanopore sequencing](https://en.wikipedia.org/wiki/Nanopore_sequencing) is based on threading a single strand of DNA through an ion channel and measuring the characteristic voltage signature of each nucleotide.
 
-              This technique is sensitive enough to measure single molecules of native DNA without reaction synchronization or repeated replication. (Data scientists can correlate non-synchronized data during analysis.)
+              This technique is sensitive enough to measure single molecules of native DNA without introducing noise before or after the main sequencing reaction.
+
+              Notes:
+              Data scientists can correlate non-synchronized data during analysis.
 
               ---
 
+              ### Pore Threading <!-- .element: style="display:none" -->
               <figure class="figure-right">
                 <img src="oxford-nanopore-2009.jpg" style="height: 10em" />
                 <figcaption><small><i>Oxford Nanopore (2009)</i></small></figcaption>
@@ -168,6 +174,8 @@
           <h3>Primary Data Analysis</h3>
           <section data-markdown>
             <textarea data-template>
+              ### Primary Data Analysis <!-- .element: style="display:none" -->
+
               Primary analysis of sequencing data produces:
               - sequence of DNA base-calls
               - quality-control metrics
@@ -223,6 +231,7 @@
         </section>
         <section data-markdown>
           <textarea data-template>
+            ### Closing <!-- .element: style="display:none" -->
             <img src="Roche-logo.svg" class="plain" height="75"/>
 
             #### Doing now what patients need next
@@ -242,6 +251,7 @@
     <script src="../lib/reveal-plugins/notes/notes.js"></script>
     <script src="../lib/reveal-plugins/math/math.js"></script>
     <script src="../lib/reveal-plugins/search/search.js"></script>
+    <script src="../lib/reveal-plugins/menu/menu.js"></script>
     <script>
 
       Reveal.initialize({
@@ -270,12 +280,17 @@
         katex: {
           local: '../lib/katex-0.16.4'
         },
+        menu: {
+          transitions: true,
+          loadIcons: false
+        },
         plugins: [
           RevealMarkdown,
           RevealHighlight,
           RevealNotes,
           RevealMath.KaTeX,
-          RevealSearch
+          RevealSearch,
+          RevealMenu
         ]
       });
 
