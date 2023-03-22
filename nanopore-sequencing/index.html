@@ -7,7 +7,7 @@
     <title>Nanopore Sequencing</title>
 
     <link rel="stylesheet" href="../lib/reveal-4.4.0/reveal.css">
-    <link rel="stylesheet" href="../lib/reveal-themes/serif.css" id="theme">
+    <link rel="stylesheet" href="../lib/reveal-themes/sky.css" id="theme">
     <link rel="stylesheet" href="../lib/highlight-themes/base16/solarized-light.css" id="highlight-theme">
     <link rel="stylesheet" href="../lib/font-awesome/css/all.css">
     <style>
@@ -53,7 +53,7 @@
             Notes:
             Hello. I'm a software engineer at Roche Diagnostics.
             I'd like to tell you about the work I've been doing on our nanopore sequencing instrument.
-            I'm familiar with all the primary analysis algorithms and pipelines.
+            I'm familiar with the data science operations for this project, and how they interact with the electrical and chemical systems that we use, and the markets that we operate in.
 
             First, I will give some background about DNA sequencing technologies.
 
@@ -105,9 +105,15 @@
 
               Signal gets weaker at longer read lengths. The sample can be amplified with [PCR](https://en.wikipedia.org/wiki/Polymerase_chain_reaction), but that introduces noise dependent on earlier noise.
 
-              High [depth of coverage](https://en.wikipedia.org/wiki/Coverage_(genetics)) is needed to differentiate between mutations in the sample and mutations in the process, in order to reach a desired quality level.
+              High [depth of coverage](https://en.wikipedia.org/wiki/Coverage_(genetics)) is needed to differentiate between mutations in the sample and mutations in the process.
 
               Notes:
+              Electrophoresis sequencing (c. 1977)
+
+              PCR (c. 1985)
+
+              Data scientists can correlate non-synchronized data *in silico* during primary analysis.
+
               Roche is doing interesting work with neural network early interpretation of PCR curves. Faster turnaround time can open new markets.
 
               ---
@@ -129,19 +135,21 @@
             <textarea data-template>
               <!-- .slide: data-menu-title="Nanopore Sequencing" -->
 
-              <figure class="figure-right">
+              <figure class="figure-right" style="width:50%">
                 <img src="Single_channel.png">
                 <figcaption><small><i>Voltage across a single ion channel</i></small></figcaption>
               </figure>
 
-              The [patch clamp](https://en.wikipedia.org/wiki/Patch_clamp) eletcrophysiology technique is used to measure voltage or current flow through a single ion channel.
+              A [patch clamp](https://en.wikipedia.org/wiki/Patch_clamp) can measure voltage or current flow through a single ion&nbsp;channel.
 
               [Nanopore sequencing](https://en.wikipedia.org/wiki/Nanopore_sequencing) is based on threading a single strand of DNA through an ion channel and measuring the characteristic voltage signature of each nucleotide.
 
-              This technique is sensitive enough to measure single molecules of native DNA without introducing noise before or after the main sequencing reaction.
+              This technique is sensitive enough to measure single molecules of native DNA without introducing noise before or after the main reaction.
 
               Notes:
-              Data scientists can correlate non-synchronized data during analysis.
+              Patch clamp (early 1980s)
+
+              Nanopore: a pore about 1 nanometer in diameter.
 
               ---
   
@@ -153,7 +161,7 @@
               </figure>
 
               - Create a membrane with a single pore.  
-              Pore-forming toxins such as α-hemolysin can be produced by bacteria for this purpose.
+              Pore-forming toxins such as α-hemolysin can be produced by bacteria.
 
               - Attach a DNA-threading enzyme to the pore.
 
@@ -181,6 +189,10 @@
 
               Notes:
               SBX makes it much easier to detect and prevent insertions and deletions, giving us a very high accuracy with fewer samples per base dwell.
+
+              Genia (2009-2014)
+
+              Stratos (2007-2020)
             </textarea>
           </section>
         </section>
@@ -232,7 +244,7 @@
 
               ### Algorithms
 
-              - Dysfunctional state detection (including valid pore lifetime)
+              - Pore lifetime detection (including various dysfunctional states)
 
               - Voltage normalization (open-channel voltage drifts over time)
 
