@@ -293,6 +293,24 @@
     <script src="../lib/reveal-plugins/search/search.js"></script>
     <script src="../lib/reveal-plugins/menu/menu.js"></script>
     <script src="../lib/reveal-plugins/zoom/zoom.js"></script>
+
+    <script type="text/template" id="menu-tools">
+      <ul class="slide-menu-items">
+        <li class="slide-menu-item active">
+          <div onclick="document.documentElement.requestFullscreen(document.documentElement)">
+            <i class="fas fa-expand active"></i>
+            <span >Fullscreen</span>
+          </div>
+        </li>
+        <li class="slide-menu-item active">
+          <div onclick="Reveal.toggleOverview()">
+            <i class="fas fa-th-large active"></i>
+            <span >Overview</span>
+          </div>
+        </li>
+      </ul>
+    </script>
+
     <script>
 
       Reveal.initialize({
@@ -302,8 +320,9 @@
         totalTime: 60 * 20,
         center: false,
         disableLayout: false,
-        controls: (document.location.protocol != 'file:'),
+        controls: (navigator.maxTouchPoints >= 1),
         controlsTutorial: false,
+        controlsLayout: 'edges',
         progress: false,
         slideNumber: "c/t",
         hashOneBasedIndex: true,
@@ -327,6 +346,13 @@
           transitions: true,
           loadIcons: false,
           themesPath: '../lib/reveal-themes/',
+          custom: [
+            {
+              title: 'Tools',
+              icon: '<i class="fa fa-toolbox">',
+              content: document.getElementById("menu-tools").innerHTML
+            }        
+          ],
           themes: [
             { name: 'Beige', theme: '../lib/reveal-themes/beige.css',
               highlightTheme: '../lib/highlight-themes/github.css' },
@@ -362,7 +388,6 @@
           RevealZoom
         ]
       });
-
     </script>
 
   </body>
