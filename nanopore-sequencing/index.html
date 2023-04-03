@@ -46,18 +46,17 @@
 
         <section>
           <h2>Nanopore DNA Sequencing</h2>
+          <h4>Data Science Engineering for Single-Molecule Sensor Data</h4>
           <section data-markdown>
             <textarea data-template>
               <!-- .slide: data-menu-title="Introduction" -->
 
-              #### Data Science Engineering for Single-Molecule Sensor Data
-
-              <br><br><br>
+              <br>
 
               ###### Jesse Clark
 
               <br>
-              
+
               ###### 2023
 
               Notes:
@@ -140,6 +139,8 @@
               ---
 
               ### Sequencing by Synthesis
+
+              <br>
 
               Synchronized reaction and detection.
 
@@ -336,9 +337,9 @@
         totalTime: 60 * 20,
         center: false,
         disableLayout: false,
-        controls: (navigator.maxTouchPoints >= 1),
+        controls: (document.location.protocol != 'file:'), //(navigator.maxTouchPoints >= 1),
         controlsTutorial: false,
-        controlsLayout: 'edges',
+        controlsLayout: (navigator.maxTouchPoints >= 1 ? 'edges': 'bottomRight'),
         progress: false,
         slideNumber: "c/t",
         hashOneBasedIndex: true,
