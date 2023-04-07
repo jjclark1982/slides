@@ -21,11 +21,16 @@
         display: block;
       }
       .figure-right {
+        clear: right;
         float: right;
         margin: 0.5em 0 0 0.5em;
       }
       .figure-right > img {
         margin: 0;
+      }
+      figcaption {
+        font-size: 80%;
+        font-style: italic;
       }
       .reveal.overview .slides > section > section {
         padding-top: 2em;
@@ -157,9 +162,11 @@
             <textarea data-template>
               <!-- .slide: data-menu-title="Nanopore Sequencing" -->
 
-              <figure class="figure-right" style="width:50%">
-                <img src="Single_channel.png">
-                <figcaption><small><i>Voltage across a single ion channel</i></small></figcaption>
+              <figure class="figure-right" style="width:45%">
+                <img src="Patch_clamp_schematic_1.png" />
+                <br/>
+                <img src="Single_channel.png" />
+                <figcaption>Voltage across a single ion channel</figcaption>
               </figure>
 
               A [patch clamp](https://en.wikipedia.org/wiki/Patch_clamp) can measure voltage or current flow through a single ion&nbsp;channel.
@@ -179,7 +186,7 @@
 
               <figure class="figure-right">
                 <img src="oxford-nanopore-2009.jpg" style="height: 10em" />
-                <figcaption><small><i>Oxford Nanopore (2009)</i></small></figcaption>
+                <figcaption>Oxford Nanopore (2009)</figcaption>
               </figure>
 
               - Create a membrane with a single pore.  
@@ -189,9 +196,8 @@
 
               - Measure voltage across the pore as the DNA passes through it.
 
-              <br style="clear:right">
-
-              Biochemical engineers can modify nucleotides to make their electric signatures more distinct ("sequencing by synthesis").
+              - Engineer nucleotides to make the voltage levels more distinct.  
+              ( "sequencing by synthesis")
 
               ---
 
