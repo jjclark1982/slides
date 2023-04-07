@@ -251,7 +251,7 @@
 
               ---
 
-              ### Pipeline
+              ### R&D Pipeline
 
               <!-- <img src="Primary Data Analysis.svg" style="width:90%" /> -->
               <object type="image/svg+xml" data="Primary Data Analysis.svg" style="width:90%" />
@@ -288,6 +288,44 @@
               - Quality metrics (read length statistics, confidence of each base-call, ...)
 
               - Neural network training
+
+              ---
+
+              <br/>
+
+              ### Neural Network Pipeline
+
+              In production, the instrument can stream voltage data directly into a GPU running the pre-trained neural network, and produce base-calls in real time.
+
+              What risks and biases does this introduce?
+
+              - Commercial lab conditions may not match training conditions  
+              (temperature/humidity, freshness of reagents, etc)
+
+              - Customer DNA distribution may not match training data  
+              (genes that are more common in different populations)
+
+              How can we mitigate these risks?
+
+              - Include confidence intervals in output
+
+              - Include uncommon examples in training  
+
+
+              Notes:
+              A neural network is a statistical pattern-matching tool that can be trained on all the features of a data set we feed it, not just the ones we deliberately engineer.
+
+              We don't want the neural net to "hallucinate" a certain reading just because it is likely in that location. Even with higher coverage, that would interfere with early cancer detection.
+
+              for example: a population in one country may have a much higher rate of some genetic condition such as Sickle Cell Anemia
+
+              - JBIG2 hallucinations
+
+              - tank photo neural net urban legend
+              https://gwern.net/tank
+
+              Would synthetic data be acceptable for training?
+
             </textarea>
           </section>
         </section>
