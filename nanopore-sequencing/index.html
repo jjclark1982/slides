@@ -40,6 +40,9 @@
         letter-spacing: normal;
         text-transform: none;
       }
+      .reveal h4 {
+        font-weight: bold;
+      }
     </style>
   </head>
 
@@ -75,7 +78,7 @@
 
               ---
 
-              #### **Abstract**
+              #### Abstract
 
               DNA sequencing has a long history of tradeoffs between cost and accuracy, mediated by data science.
 
@@ -116,7 +119,7 @@
 
               ---
 
-              ### Sequencing by Ligation
+              #### Sequencing by Ligation
 
               <figure class="figure-right" style="width:45%">
                 <img src="Gel_Electrophoresis.svg" />
@@ -143,11 +146,13 @@
 
               ---
 
-              ### Sequencing by Synthesis
+              #### Sequencing by Synthesis
 
               <br>
 
               Synchronized reaction and detection.
+
+              Biochemical engineers can modify nucleotides to create a detectable signal while they are being added to a chain by DNA polymerase.
 
               For example, engineered nucleotides that fluoresce when added to a chain.
 
@@ -203,7 +208,7 @@
 
               <!-- .slide: data-menu-title="High-Throughput Platform" -->
 
-              ### Roche High-Throughput Platform
+              #### Roche High-Throughput Platform
 
               <figure class="figure-right">
                 <img src="roche-cobas-6800-product-shot.png" style="width:18em" />
@@ -251,7 +256,7 @@
 
               ---
 
-              ### R&D Pipeline
+              #### R&D Pipeline
 
               <!-- <img src="Primary Data Analysis.svg" style="width:90%" /> -->
               <object type="image/svg+xml" data="Primary Data Analysis.svg" style="width:90%" />
@@ -271,7 +276,7 @@
 
               ---
 
-              ### Algorithms
+              #### Algorithms
 
               - Pore lifetime detection (including various dysfunctional states)
 
@@ -293,7 +298,7 @@
 
               <br/>
 
-              ### Neural Network Pipeline
+              #### Neural Network Pipeline
 
               In production, the instrument can stream voltage data directly into a GPU running the pre-trained neural network, and produce base-calls in real time.
 
@@ -305,7 +310,8 @@
               - Customer DNA distribution may not match training data  
               (genes that are more common in different populations)
 
-              - Accuracy may be hard to interpret
+              - Accuracy may be hard to interpret  
+              (higher coverage combines non-linearly)
 
               How can we mitigate these risks?
 
@@ -336,7 +342,7 @@
 
             <img src="Roche-logo.svg" class="plain" height="75"/>
 
-            #### Doing now what patients need next
+            ##### Doing now what patients need next
 
             <br><br>
 
