@@ -117,6 +117,8 @@
 
               Breakthroughs are due to new techniques.
 
+              $$\textrm{sequencing cost} \approx \textrm{num base reads} \times \frac{\textrm{samples per base}}{\textrm{samples per second}} $$
+
               ---
 
               #### Sequencing by Ligation
@@ -148,15 +150,15 @@
 
               #### Sequencing by Synthesis
 
-              <br/>
+              <figure class="figure-right" style="width:25%; margin-top:-1.5em;">
+                <img src="DNA_polymerase.svg" />
+              </figure>
 
               Synchronized reaction and detection.
 
-              Biochemical engineers can modify nucleotides to create a detectable signal while they are being added to a chain by DNA polymerase.
+              Biochemical engineers can modify DNA polymerase or modify available nucleotides to create a detectable signal when each base is processed.
 
               For example, engineered nucleotides that fluoresce when added to a chain, combined with optical detection.
-
-              <br/><br/><br/>
             </textarea>
           </section>
         </section>
@@ -321,6 +323,8 @@
               We don't want the neural net to "hallucinate" a certain reading just because it is likely in that location. Even with higher coverage, that would interfere with early cancer detection.
 
               for example: a population in one country may have a much higher rate of some genetic condition such as Sickle Cell Anemia
+
+              The basic tradeoff between cost and accuracy becomes much more non-linear when you use techniques that emphasize the most likely reading of the data, but you are looking for unlikely readings such as new mutations.
 
               - JBIG2 hallucinations
 
