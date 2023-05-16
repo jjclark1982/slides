@@ -54,7 +54,7 @@
 
         <section>
           <h2>Nanopore DNA Sequencing</h2>
-          <h4>Data Science Engineering for Single-Molecule Sensors</h4>
+          <h4 style="font-weight:normal;">Data Science Engineering for Single-Molecule Sensors</h4>
           <section data-markdown>
             <textarea data-template>
               <!-- .slide: data-menu-title="Introduction" -->
@@ -169,10 +169,14 @@
             <textarea data-template>
               <!-- .slide: data-menu-title="Nanopore Sequencing" -->
 
-              <figure class="figure-right" style="width:45%">
-                <img src="Patch_clamp_schematic_1.png" />
+              <br/> 
+
+              #### Patch Clamp
+
+              <figure class="figure-right" style="width:33%; margin-top:-1.5em">
+                <img src="Patch_clamp_schematic_1.png" style="width: 100%"/>
                 <br/>
-                <img src="Single_channel.png" />
+                <img src="Single_channel.png" style="width: 100%"/>
                 <figcaption>Voltage across a single ion channel</figcaption>
               </figure>
 
@@ -189,7 +193,7 @@
 
               ---
   
-              ### Ion Channel Threading <!-- .element: style="display:none" -->
+              #### Ion Channel Threading
 
               <figure class="figure-right">
                 <img src="oxford-nanopore-2009.jpg" style="height: 10em" />
@@ -242,6 +246,7 @@
               - sequence of DNA base-calls
               - quality-control metrics
               - genome alignment (if applicable)
+              - feedback for experiment designers (during R&D)
 
               These can then be passed into later analysis stages such as mutation calling.
 
@@ -307,7 +312,7 @@
               What risks and biases does this introduce?
 
               - Commercial lab conditions may not match training conditions  
-              (temperature/humidity, freshness of reagents, etc)
+              (temperature/humidity, freshness of reagents, *etc.*)
 
               - Customer DNA distribution may not match training data  
               (genes that are more common in different populations)
@@ -384,17 +389,17 @@
     </script>
 
     <script>
-
       Reveal.initialize({
         width: 1440,
         height: 900,
         margin: 0.05,
-        totalTime: 60 * 20,
+        totalTime: 60 * 30, // 30 minutes
         center: false,
         disableLayout: false,
         controls: (document.location.protocol != 'file:'), //(navigator.maxTouchPoints >= 1),
         controlsTutorial: false,
         controlsLayout: (navigator.maxTouchPoints >= 1 ? 'edges': 'bottomRight'),
+        touch: false,
         progress: false,
         slideNumber: "c/t",
         hashOneBasedIndex: true,
@@ -413,7 +418,7 @@
           local: '../lib/katex-0.16.4'
         },
         menu: {
-          sticky: false,
+          sticky: true,
           numbers: false,
           transitions: true,
           loadIcons: false,
